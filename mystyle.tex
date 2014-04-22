@@ -1,0 +1,52 @@
+% die verschiedenen benutzen Pakete
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{stmaryrd}  %für \mapsfrom
+\usepackage{extarrows} %für \xlongequal
+\usepackage{tikz}      %für Diagrame
+\usepackage{enumerate}
+
+% die Umgebungen mit kursiver Schrift
+\newcounter{saetze}
+\newtheorem{lem}[saetze]{Lemma}
+\newtheorem{lem}[saetze]{Bemerkung}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\F}{\mathbb{F}}
+
+\newcommand{\mc}{\mathcal}
+
+\newcommand{\Maps}{\operatorname{Maps}}
+\newcommand{\Hom}{\operatorname{Hom}}
+\newcommand{\GL}{\operatorname{GL}}
+\newcommand{\supp}{\operatorname{supp}}
+
+\newcommand{\id}{\operatorname{id}}
+\newcommand{\can}{\operatorname{can}}
+
+\newcommand{\dotcup}{\ensuremath{\mathaccent\cdot\cup}}
+\newcommand{\bigdotcup}{\charfusion[\mathop]{\bigcup}{\cdot}}
+\newcommand{\vspan}{\operatorname{span}}
+\newcommand{\kchar}{\operatorname{char}}
+
+\newcommand{\vect}[1]{\begin{pmatrix}#1\end{pmatrix}}
+
+
+% technischer Kram für \bigdotcup
+\makeatletter
+\def\moverlay{\mathpalette\mov@rlay}
+\def\mov@rlay#1#2{\leavevmode\vtop{%
+   \baselineskip\z@skip \lineskiplimit-\maxdimen
+   \ialign{\hfil$\m@th#1##$\hfil\cr#2\crcr}}}
+\newcommand{\charfusion}[3][\mathord]{
+    #1{\ifx#1\mathop\vphantom{#2}\fi
+        \mathpalette\mov@rlay{#2\cr#3}
+      }
+    \ifx#1\mathop\expandafter\displaylimits\fi}
+\makeatother
