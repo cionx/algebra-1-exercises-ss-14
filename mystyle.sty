@@ -1,4 +1,5 @@
 % die verschiedenen benutzen Pakete
+\usepackage[ngerman]{babel}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{amsthm}
@@ -16,6 +17,11 @@
 \newtheorem{lem}[saetze]{Lemma}
 \newtheorem{bem}[saetze]{Bemerkung}
 
+% die Umgebungen mit normaler Schrift
+\theoremstyle{definition}
+\newtheorem*{ia}{Induktionsanfang}
+\newtheorem*{is}{Induktionsschritt}
+
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\Q}{\mathbb{Q}}
@@ -26,8 +32,10 @@
 \newcommand{\mc}{\mathcal}
 
 \newcommand{\Maps}{\operatorname{Maps}}
+\newcommand{\Abb}{\operatorname{Abb}}
 \newcommand{\Hom}{\operatorname{Hom}}
 \newcommand{\GL}{\operatorname{GL}}
+\newcommand{\SL}{\operatorname{SL}}
 \newcommand{\supp}{\operatorname{supp}}
 
 \newcommand{\id}{\operatorname{id}}

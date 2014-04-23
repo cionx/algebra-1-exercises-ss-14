@@ -20,7 +20,7 @@
 
 
 \section{}
-Wir betrachten zunächst $H = \SL_2(\C)$. Es ist klar, dass $H.0 = \{0\}$. Wir behaupten, dass $H.x = K^2 \smallsetminus \{0\}$ für alle $x \in K^2 \smallsetminus \{0\}$. Da Bahnen entweder disjunkt oder gleich sind, reicht es hierfür zu zeigen, dass $H.e_1 = K^2 \smallsetminus \{0\}$.
+Wir betrachten zunächst $H = \SL_2(K)$. Es ist klar, dass $H.0 = \{0\}$. Wir behaupten, dass $H.x = K^2 \smallsetminus \{0\}$ für alle $x \in K^2 \smallsetminus \{0\}$. Da Bahnen entweder disjunkt oder gleich sind, reicht es hierfür zu zeigen, dass $H.e_1 = K^2 \smallsetminus \{0\}$.
 
 Es sei $x = (x_1,x_2)^T \in K^2 \smallsetminus \{0\}$. Ist $x_1 \neq 0$ so gilt für die Matrix
 \[
@@ -40,7 +40,7 @@ dass $\det A = 1$, also $A \in H$, und $Ae_1 = x$. Ist $x_2 \neq 0$ so gilt für
 \]
 dass $\det B = 1$, also $B \in H$, und $B e_1 = x$. Da $x \neq 0$ muss $x_1 \neq 0$ oder $x_2 \neq 0$, also $x \in H.e_1$. Die Beliebigkeit von $x \in K^2 \smallsetminus \{0\}$ zeigt, dass $H.e_1 = K^2 \smallsetminus \{0\}$.
 
-Für die natürliche Darstellung von $G = \GL_2$ auf $K^2$ ergibt sich, dass $G.0 = \{0\}$. Da $H \leq G$ eine Untergruppe ist, so dass die Aktion von $H$ auf $K^2$ durch die von $G$ induziert wird, ist für alle $x \in K^2 \smallsetminus\{0\}$
+Für die natürliche Darstellung von $G = \GL_2(K)$ auf $K^2$ ergibt sich, dass $G.0 = \{0\}$. Da $H \leq G$ eine Untergruppe ist, so dass die Aktion von $H$ auf $K^2$ durch die von $G$ induziert wird, ist für alle $x \in K^2 \smallsetminus\{0\}$
 \[
  K^2 \smallsetminus \{0\} = H.x \subseteq G.x \subseteq K^2 \smallsetminus\{0\},
 \]
@@ -63,6 +63,137 @@ muss
 sowie daher $1 = \det A = d$. Also ist $H_{e_1} \subseteq U$. Es ist aber auch klar, dass $U \subseteq H_{e_1}$, denn es ist $\det B = 1$ und $Be_1 = e_1$ für alle $B \in U$. Daher ist $U = H_{e_1}$.
 
 Dass für jedes $x \in K^2 \setminus \{0\}$ die Stabilisatorgruppe $H_x$ zu $U$ konjugiert ist, folgt direkt daraus, dass $x$ und $e_1$ die gleiche Bahn und damit konjugierte Stabilisatorgruppen haben.
+
+
+
+
+
+\section{}
+Um uns die Aufgabe zu erleichtern übertragen wir zunächst einige Aussagen, die wir für Polynome in einer Variablen kennen, auf Polynome in mehreren Variablen.
+
+
+\begin{lem}\label{lem: Polyome Polynomsfunktionen}
+ Sei $K$ ein unendlicher Körper und $n \geq 1$. Dann ist die Abbildung
+ \[
+  \varphi: K[X_1, \ldots, X_n] \to \mc{P}\left(K^n\right), p \mapsto ((\lambda_1, \ldots, \lambda_n) \mapsto p(\lambda_1, \ldots, \lambda_n))
+ \]
+ von Polynomen auf die entsprechenden Polynomsfunktionen injektiv. Insbesondere gilt für $f, g \in K[X_1, \ldots, X_n]$ mit
+ \[
+  f(\lambda_1, \ldots, \lambda_n) = g(\lambda_1, \ldots, \lambda_n) \text{ für alle } \lambda_1, \ldots, \lambda_n \in K
+ \]
+ bereit, dass $f = g$.
+\end{lem}
+\begin{proof}
+ Wir zeigen die Aussage per Induktion über $n \geq 1$.
+ \begin{ia}
+  Es sei $n = 1$. Für $f,g \in K[X_1]$ mit $f(\lambda) = g(\lambda)$ für alle $\lambda \in K$ ist $(f-g)(\lambda) = 0$ für alle $\lambda \in K$. Da $K$ unendlich ist hat $f-g$ daher unendlich viele Nullstellen. Daher muss $f-g = 0$, also $f = g$.
+ \end{ia}
+ \begin{is}
+  Es sei $n \geq 2$ und es gelte die Aussage für alle kleineren $k \geq 1$. Da $\varphi$ offenbar $K$-linear ist (eigentlich sogar ein $K$-Algebrahomomorphismus), genügt es zu zeigen, dass $\ker \varphi = 0$. Sei also $f \in K[X_1, \ldots, X_n]$ mit
+  \[
+   f(\lambda_1, \ldots, \lambda_n) = 0 \text{ für alle } \lambda_1, \ldots, \lambda_n \in K.
+  \]
+  Wir können $f$ als
+  \[
+   f(X_1, \ldots, X_n) = \sum_{i=0}^\infty p_i(X_1, \ldots, X_{n-1}) X_n^i
+  \]
+  schreiben, wobei $p_i \in K[X_1, \ldots, X_{n-1}]$ für alle $i \in \N$ und $p_i = 0$ für fast alle $i \in \N$. Für alle $\lambda_1, \ldots, \lambda_{n-1} \in K$ ist
+  \[
+   g_{\lambda_1, \ldots, \lambda_{n-1}}(X_n)
+   := f(\lambda_1, \ldots, \lambda_{n-1}, X_n)
+   = \sum_{i=0}^\infty p_i(\lambda_1, \ldots, \lambda_{n-1}) X_n^i.
+  \]
+  ein Polynom in nur noch einer Variablen mit
+  \[
+   g_{\lambda_1, \ldots, \lambda_{n-1}}(\lambda) = f(\lambda_1, \ldots, \lambda_{n-1}, \lambda) = 0
+   \text{ für alle } \lambda \in K.
+  \]
+  Es muss daher nach Induktionsvoraussetzung für $k=1$ bereits $g_{\lambda_1, \ldots, \lambda_{n-1}} = 0$ für alle $\lambda_1, \ldots, \lambda_{n-1} \in K$. Also ist für alle $\lambda_1, \ldots, \lambda_{n-1} \in K$
+  \[
+   p_i(\lambda_1, \ldots, \lambda_{n-1}) = 0 \text{ für alle } i \in \N.
+  \]
+  Nach Induktionsvoraussetzung für $k=n-1$ bedeutet dies für alle $i \in \N$, dass bereits $p_i = 0$. Also ist bereits $f = 0$.
+ \end{is}
+\end{proof}
+Da die Abbildung von Polynomen auf Polynomsfunktionen offenbar surjektiv ist, ist $\varphi$ sogar ein $K$-Algebraisomorphismus (falls $K$ unendlich ist). Wir werden daher im Folgenden nicht mehr zwischen Polynomen und Polynomsfunktionen unterscheiden, sofern wir uns über einem unendlichen Körper befinden.
+
+
+\begin{bem}\label{bem: support leer oder unendlich}
+ Es sei $K$ ein unendlicher Körper, $n \geq 1$ und $f \in K[X_1, \ldots, X_n]$. Dann ist $\supp(f) = \emptyset$ oder $\supp(f)$ unendlich. Insbesondere ist für $f, g \in K[X_1, \ldots, X_n]$ mit
+ \[
+  f(\lambda_1, \ldots, \lambda_n) = g(\lambda_1, \ldots, \lambda_n) \text{ für fast alle } \lambda_1, \ldots, \lambda_n \in K
+ \]
+ bereits $f = g$.
+\end{bem}
+\begin{proof}
+ Wir nehmen an, die Aussage gilt nicht. Dann gibt es $f \in K[X_1, \ldots, X_n]$, so dass $\supp(f) \neq \emptyset$ und $\supp(f)$ endlich ist. Es sei dann $(\lambda_1, \ldots, \lambda_n) \in \supp(f)$. Wir betrachten das Polynom $g \in K[X]$ mit
+ \[
+  g(X) := f(\lambda_1, \ldots, \lambda_{n-1}, X).
+ \]
+ Es ist $\supp(g) \neq \emptyset$, da $g(\lambda_n) = f(\lambda_1, \ldots, \lambda_n) \neq 0$ und $\supp(g)$ endlich, da $\supp(f)$ endlich ist. Da $K$ unendlich ist, hat $g$ unendlich viele Nullstellen. Also muss bereits $g = 0$, was im Widerspruch zu $\supp(g) \neq \emptyset$ steht. Es kann also ein solches $g$ und daher auch ein solches $f$ nicht geben.
+ 
+ Für $f,g \in K[X_1, \ldots, X_n]$ mit
+ \[
+  f(\lambda_1, \ldots, \lambda_n) = g(\lambda_1, \ldots, \lambda_n) \text{ für fast alle } \lambda_1, \ldots, \lambda_n \in K
+ \]
+ ist $\supp(f-g)$ endlich. Also muss $\supp(f-g) = \emptyset$ und damit nach Lemma \ref{lem: Polyome Polynomsfunktionen} bereits $f-g = 0$ und daher $f=g$.
+\end{proof}
+
+
+\subsection{}
+Da $K$ unendlich ist, können wir $K[X,Y]$ nach Lemma \ref{lem: Polyome Polynomsfunktionen} mit den Polynomsfunktionen $\mc{P}\left(K^2\right)$ identifizieren. Die natürliche Darstellung von $G = \GL_2(K)$ auf $K^2$ induziert bekanntermaßen eine lineare Gruppenwirkung von $G$ auf $\mc{P}\left(K^2\right)$ vermöge
+\[
+ (A.p)(x) = p\left(A^{-1}x\right) \text{ für alle } A \in G, x \in K^2.
+\]
+Für
+\[
+ A = \vect{a&b\\c&d} \in G
+\]
+ist daher für alle $p \in K[X,Y]$
+\[
+ (A.p)(X,Y) = p(aX+bY,cX+dY).
+\]
+Für $X,Y \in K[X,Y]$ ist daher
+\[
+ A.X = aX+bY \text{ und } A.X = cX+dY.
+\]
+
+
+\subsection{}
+Es ist klar, dass $K \subseteq K[X,Y]^G$. Es gilt daher nur noch zu zeigen, dass $K[X,Y] \subseteq K$. Sei hierfür $p \in K[X,Y]$. Für $x \in K^2 \smallsetminus \{0\}$ gibt es nach Aufgabe 1 eine Matrix $A \in G$ mit $A^{-1}x = e_1$. Daher ist
+\[
+ p(x) = (A.p)(x) = p\left(A^{-1}.x\right) = p(e_1).
+\]
+Dass zeigt, dass $p$ auf $K^2 \smallsetminus \{0\}$ konstant ist. Nach Bemerkung \ref{bem: support leer oder unendlich} ist daher $p$ bereits auf ganz $K^2$ konstant, also nach Lemma \ref{lem: Polyome Polynomsfunktionen} bereits $p \in K$. (Es ist klar, dass bei der Identifikation $K[X,Y] \cong \mc{P}\left(K^2\right)$ die konstanten Polynome auf naheliegende Weise genau den konstanen Polynomsfunktionen entsprechen.)
+
+Für $\SL_2(K)$ ist die Argumentation analog, da die natürliche Wirkung von $\SL_2(K)$ auf $K^2$ zu den gleichen Bahnen führt wie die Wirkung von $\GL_2(K)$.
+
+
+\subsection{}
+Für $p \in K[X,Y]$ mit $p \in K[Y]$ ist für alle $A = \vect{1 & s \\ 0 & 1} \in U$
+\[
+ (A.p)(X,Y) = p(X-sY,Y) = p(X,Y).
+\]
+Daher ist $U \subseteq K[X,Y]^U$.
+
+Sei andererseits $p \in K[X,Y]^U$. Dann ist für alle $A = \vect{1 & s \\ 0 & 1} \in U$
+\[
+ p(X,Y) = (A.p)(X,Y) = p(X-sY,Y).
+\]
+Wir bemerken, dass daher $p(x,y) = p(x',y)$ für alle $y \neq 0, x, x' \in K$, da
+\[
+ p(x,y) = p\left(x-\left((x'-x)y^{-1}\right)y,y\right) = p(x',y).
+\]
+Wir definieren $q \in K[X,Y]$ mit $q \in K[X,Y]$ als $q(X,Y) = p(0,Y)$. Für alle $x \in K$ ist für alle $y \neq 0$
+\[
+ q(x,y) = p(0,y) = p(x,y).
+\]
+Nach Bemerkung \ref{bem: support leer oder unendlich} muss daher bereits $q(x,y) = p(x,y)$ für alle $x, y \in K$. Nach Lemma \ref{lem: Polyome Polynomsfunktionen} ist daher bereits $p = q$, also $p \in K[Y]$. Das zeigt, dass $K[X,Y]^U \subseteq K[Y]$.
+
+
+
+
+
 
 
 
