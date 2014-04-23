@@ -15,4 +15,63 @@
 \begin{document}
 \maketitle
 
+
+
+
+
+\section{}
+Wir betrachten zunächst $H = \SL_2(\C)$. Es ist klar, dass $H.0 = \{0\}$. Wir behaupten, dass $H.x = K^2 \smallsetminus \{0\}$ für alle $x \in K^2 \smallsetminus \{0\}$. Da Bahnen entweder disjunkt oder gleich sind, reicht es hierfür zu zeigen, dass $H.e_1 = K^2 \smallsetminus \{0\}$.
+
+Es sei $x = (x_1,x_2)^T \in K^2 \smallsetminus \{0\}$. Ist $x_1 \neq 0$ so gilt für die Matrix
+\[
+ A =
+ \begin{pmatrix}
+  x_1 & 0 \\
+  x_2 & x_1^{-1}
+ \end{pmatrix},
+\]
+dass $\det A = 1$, also $A \in H$, und $Ae_1 = x$. Ist $x_2 \neq 0$ so gilt für die Matrix
+\[
+ B =
+ \begin{pmatrix}
+  x_1 & -x_2^{-1} \\
+  x_2 & 0
+ \end{pmatrix},
+\]
+dass $\det B = 1$, also $B \in H$, und $B e_1 = x$. Da $x \neq 0$ muss $x_1 \neq 0$ oder $x_2 \neq 0$, also $x \in H.e_1$. Die Beliebigkeit von $x \in K^2 \smallsetminus \{0\}$ zeigt, dass $H.e_1 = K^2 \smallsetminus \{0\}$.
+
+Für die natürliche Darstellung von $G = \GL_2$ auf $K^2$ ergibt sich, dass $G.0 = \{0\}$. Da $H \leq G$ eine Untergruppe ist, so dass die Aktion von $H$ auf $K^2$ durch die von $G$ induziert wird, ist für alle $x \in K^2 \smallsetminus\{0\}$
+\[
+ K^2 \smallsetminus \{0\} = H.x \subseteq G.x \subseteq K^2 \smallsetminus\{0\},
+\]
+also $G.x = K^2 \smallsetminus\{0\}$.
+
+Für eine Matrix
+\[
+ A =
+ \begin{pmatrix}
+  a & b \\
+  c & d
+ \end{pmatrix}
+ \in
+ H_{e_1}
+\]
+muss
+\[
+ \vect{a\\c} = Ae_1 = e_1 = \vect{1\\0},
+\]
+sowie daher $1 = \det A = d$. Also ist $H_{e_1} \subseteq U$. Es ist aber auch klar, dass $U \subseteq H_{e_1}$, denn es ist $\det B = 1$ und $Be_1 = e_1$ für alle $B \in U$. Daher ist $U = H_{e_1}$.
+
+Dass für jedes $x \in K^2 \setminus \{0\}$ die Stabilisatorgruppe $H_x$ zu $U$ konjugiert ist, folgt direkt daraus, dass $x$ und $e_1$ die gleiche Bahn und damit konjugierte Stabilisatorgruppen haben.
+
+
+
+
+
+
+
+
+
+
+
 \end{document}
