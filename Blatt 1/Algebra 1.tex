@@ -279,23 +279,78 @@ ein $k$-Basis von $k[X_1, \ldots, X_n] / I$ ist. Es muss daher $\dim_k \ker \rho
 
 
 
+\section{}
 
 
+\subsection{}
+Wir zeigen zunächst, dass $H = \GL_2(\C)$ auf $F^{(n)}$ wirkt. Wir wissen aus Aufgabe 2, dass $H$ linear auf $K[X,Y]$ per
+\[
+ (A.p)(x) = p\left(A^{-1}.x\right) \text{ für alle } A \in H, x \in \C^2, p \in K[X,Y]
+\]
+wirkt, also
+\[
+ (A.p)(X,Y) = p(aX+bY, cX+dY) \text{ für alle } \vect{a&b\\c&d} \in H, p \in K[X,Y].
+\]
+
+Wir bemerken, dass $F^{(n)}$ eine Unterdarstellung dieser Darstellung von $G$ ist. Da $H$ von Matrizen der Form
+\[
+ I := \vect{0&1\\1&0}, B_\lambda := \vect{\lambda&0\\0&1}, C_\mu := \vect{1&\mu\\0&1} \text{ mit } \lambda \in \C^\times, \mu \in \C
+\]
+erzeugt wird, genügt es hierfür die Abgeschlossenheit von $F^{(n)}$ unter der Wirkung dieser Matrizen zu zeigen. Dies gilt, denn für alle $p = \sum_{k=0}^n a_k X^{n-k} Y^k \in F^{(n)}$ ist
+\[
+ (I.p)(X,Y) = p.(Y,X) \in F^{(n)},
+\]
+für alle $\lambda \in \C^\times$
+\[
+ (B_\lambda.p)(X,Y) = p(\lambda X, Y) = \sum_{k=0}^n a_k \lambda^{n-k} X^{n-k} Y^k \in F^{(n)} \\
+\]
+und für alle $\mu \in \C$
+\begin{align*}
+ (C_\mu.p)(X,Y)
+ &= p(X + \mu Y, Y)
+ = \sum_{k=0}^n a_k (X + \mu Y)^{n-k} Y^k \\
+ &= \sum_{k=0}^n a_k \sum_{l=0}^{n-k} \binom{n-k}{l} X^l \mu^{n-k-l} Y^{n-k-l} Y^k \\
+ &= \sum_{k=0}^n \sum_{l=0}^{n-k} a_k \binom{n-k}{l} \mu^{n-k-l} X^l  Y^{n-l} \in F^{(n)},
+\end{align*}
+da $X^l Y^{n-l} \in F^{(n)}$ für alle $0 \leq l \leq n$ und $F^{(n)}$ ein $\C$-Vektorraum ist.
+
+Da $H$ linear auf $F^{(n)}$ wirkt, wirkt $H$ auch linear auf $\mc{P}\left(F^{(n)}\right)$ via
+\[
+ (A.p)(v) = p\left(A^{-1}.v\right) \text{ für alle } A \in H, p \in \mc{P}\left(F^{(n)}\right), v \in F^{(n)}.
+\]
+Da $G \leq H$ eine Untergruppe ist, induziert die lineare Gruppenwirkung von $H$ auf $F^{(n)}$ und $\mc{P}\left(F^{(n)}\right)$ eine lineare Gruppenwirkung von $G$ auf diesen Räumen.
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+\subsection{}
+Für eine symmetrische Matrix $A \in \C^{2 \times 2}$ und das Polynom
+\[
+ f_A(X,Y) := \vect{X & Y} \cdot A \cdot \vect{X\\Y} = a_{11} X^2 + 2 a_{12} X Y + a_{22} Y^2
+\]
+ist $f_A \in F^{(n)}$ mit $D(f) = \det A$. (Diese Schreibweise ist unproblematisch, da wir wegen Lemma \ref{lem: Polyome Polynomsfunktionen} nicht zwischen Polynomen und Polynomsfunktionen unterscheiden müssen.) Sei nun $f = a_0 X^2 + 2 a_1 X Y + a_2 Y^2 \in F^{(n)}$. Mit der symmetrischen Matrix
+\[
+ B = \vect{a_0 & a_1 \\ a_1 & a_2} \in \C^{2 \times 2}
+\]
+können wir $f$ schreiben als $f = f_B$. Für $S \in \SL_2(\C)$ ist auch $\left(S^{-1}\right)^T B S^{-1}$ symmetrisch, da
+\[
+ \left( \left(S^{-1}\right)^T B S^{-1} \right)^T = \left(S^{-1}\right)^T B^T S^{-1} = \left(S^{-1}\right)^T B S^{-1}.
+\]
+Es ist $S.f = f_{\left(S^{-1}\right)^T B S^{-1}}$, da
+\begin{align*}
+ (S.f)(X,Y)
+ &= (S.f_B)(X,Y) \\
+ &= \vect{X & Y} \left(S^{-1}\right)^T B S^{-1} \vect{X \\ Y} \\
+ &= f_{\left(S^{-1}\right)^T B S^{-1}}(X,Y).
+\end{align*}
+Da $\det S^{-1} = 1$ ist daher
+\begin{align*}
+ D(S.f)
+ &= D\left(f_{\left(S^{-1}\right)^T B S^{-1}}\right)
+ = \det\left(\left(S^{-1}\right)^T B S^{-1}\right) \\
+ &= \det B
+ = D(f_B)
+ = D(f).
+\end{align*}
+Das zeigt, dass $D(f)$ $G$-invariant ist.
 
 
 
