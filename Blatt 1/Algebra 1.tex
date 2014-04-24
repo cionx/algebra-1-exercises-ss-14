@@ -194,6 +194,102 @@ Nach Bemerkung \ref{bem: support leer oder unendlich} muss daher bereits $q(x,y)
 
 
 
+\section{}
+
+
+\subsection{}
+Aufgrund der universellen Eigenschaft des Polynomrings setzt sich die Abbildung
+\[
+ X_i \mapsto x_i \text{ für alle } i=1,\ldots,n
+\]
+zu einem eindeutigen Ringhomomorphismus
+\[
+ \phi : k[X_1, \ldots, X_n] \to S(V^*)
+\]
+fort. Aufgrund der universellen Eigenschaft der symmetrischen Algebra $S(V^*)$ setzt sich die lineare Abbildung
+\[
+ V^* \to k[X_1, \ldots, X_n] \text{ definiert durch } x_i \mapsto X_i \text{ für alle } i=1,\ldots,n
+\]
+zu einem eindeutigen $k$-Algebrahomomorphismus $\psi : S(V^*) \to k[X_1, \ldots, X_n]$ fort.
+
+Es ist $\psi \circ \phi : k[X_1, \ldots, X_n] \to k[X_1, \ldots, X_n]$ ein Ringhomomorphismus, und für alle $i=1,\ldots,n$ ist $(\psi \circ \phi)(X_i) = X_i$. Aufgrund der universellen Eigenschaft des Polynomrings ist daher $\psi \circ \phi = \id_{k[X_1, \ldots, X_n]}$. (Denn es gibt einen eindeutigen Ringhomomorphismus $k[X_1, \ldots, X_n] \to k[X_1, \ldots, X_n]$ mit $X_i \mapsto X_i$ für $i=1,\ldots,n$, und dieser ist offenbar $\id_{k[X_1, \ldots, X_n]}$.)
+
+$\phi$ ist offenbar auch $k$-linear und somit ein $k$-Algebrahomomorphismus. Also ist $\phi \circ \psi : S(V^*) \to S(V^*)$ ein $k$-Algebrahomomorphismus. Da $(\phi \circ \psi)(x_i) = x_i$ für alle $i=1,\ldots,n$ muss wegen der universellen Eigenschaft von der symmetrischen Algebra bereits $\phi \circ \psi = \id_{S(V^*)}$. (Denn es gibt einen eindeutigen $k$-Algebraho\-mo\-mor\-phis\-mus $S(V^*) \to S(V^*)$  mit $x_i \mapsto x_i$ für $i=1,\ldots,n$, und dieser ist offenbar $\id_{S(V^*)}$).
+
+Das zeigt, dass $\phi$ ein $k$-Algebraisomorphismus ist mit $\phi^{-1} = \psi$. Dieser ist aufgrund der universellen Eigenschaft des Polynomrings $k[X_1, \ldots, X_n]$ durch $\phi(X_i) = x_i$ für alle $i=1,\ldots,n$ eindeutig bestimmt (s.o.).wh
+
+
+\subsection{}
+Aufgrund der universellen Eigenschaft des Polynomrings setzt sich die Abbildung
+\[
+ X_j \mapsto \left(\sum_{i=1}^n \lambda_i b_i \mapsto \lambda_j\right) \in \mc{P}(V)
+\]
+zu einem eindeutigen Ringhomomorphismus $\rho : k[X_1, \ldots, X_n] \to \mc{P}(V)$ fort, der von der Form
+\[
+ k[X_1, \ldots, X_n] \to \mc{P}(V),
+ p \mapsto \left( \sum_{i=1}^n \lambda_i b_i \mapsto p(\lambda_1, \ldots, \lambda_n) \right)
+\]
+ist. Es ist klar, dass dieser auch $k$-linear, und somit ein $k$-Algebrahomomorphismus ist. $\rho$ ist nach Definition von $\mc{P}(V)$ offensichtlich surjektiv.
+
+Ist $k$ unendlich, so folgt aus Lemma \ref{lem: Polyome Polynomsfunktionen}, dass es einen $k$-Algebraisomorphismus
+\[
+ k[X_1, \ldots, X_n] \cong \mc{P}\left(k^n\right) \text{ mit }
+ p \mapsto ((\lambda_1, \ldots, \lambda_n) \mapsto p(\lambda_1, \ldots, \lambda_n)).
+\]
+gibt. Die Basis $b_1, \ldots, b_n$ von $V$ liefert einen $k$-Vektorraumisomorphismus
+\[
+ V \to k^n, \sum_{i=1}^n \lambda_i b_i \mapsto (\lambda_1, \ldots, \lambda_n).
+\]
+Es ist klar, dass dieser $k$-Vektorraumisomorphismus auch einen $k$-Algebra\-iso\-mor\-phismus
+\[
+ \mc{P}\left(k^n\right) \to \mc{P}(V), p \mapsto \left(\sum_{i=1}^n \lambda_i b_i \mapsto p(\lambda_1, \ldots, \lambda_n)\right)
+\]
+induziert. Damit ergibt sich insgesamt ein $k$-Algebraisomorphismus
+\[
+ k[X_1, \ldots, X_n] \to \mc{P}(V), p \mapsto \left( \sum_{i=1}^n \lambda_i b_i \mapsto p(\lambda_1, \ldots, \lambda_n) \right).
+\]
+Dieser ist gerade $\rho$. Das zeigt, dass $\rho$ ein $k$-Algebraisomorphismus ist, wenn $k$ unendlich ist.
+
+Ist $k$ endlich mit $q$ Elementen, so ist $\rho$ nicht injektiv, denn $k[X_1, \ldots, X_n]$ ist unendlich, aber $\mc{P}(V) \subseteq \Abb(V,k)$, und $\Abb(V,k)$ enthält nur endlich (genau $q^{q^n}$) viele Elemente.
+
+Es gilt sogar $\mc{P}(V) = \Abb(V,k)$: Um zu zeigen, dass $\Abb(V,k) \subseteq \mc{P}(V)$, bemerken wir, dass $\Abb(V,k)$ die $k$-Basis $\{\chi_v : v \in V\}$ besitzt. Für $v = \sum_{i=1}^n \lambda^v_i b^i \in V$ können wir die Polynomsfunktion $h^v \in \mc{P}(V)$ definieren als
+\[
+ h^v\left(\sum_{i=1}^n \lambda_i b_i\right) := \prod_{j=1}^n \prod_{\mu \in k^\times} (\mu +  \lambda^v_j - \lambda_j).
+\]
+Es ist $h^v(w) = 0$ genau dann wenn $w \neq v$ für alle $v, w \in V$. Daher ist für alle $v \in V$
+\[
+ \chi_v = \frac{1}{h^v(v)} h^v \in \mc{P}(V).
+\]
+
+Da $k$ aus $q$ Elementen besteht ist bekannt, dass das Polynom $X^q-X \in k[X]$ jedes Körperelement als Nullstelle hat. Daher ist $X_i^q-X_i \in \ker \rho$ für alle $i=1,\ldots,n$. Da $\rho$ ein Ringhomomorphismus ist, ist damit auch
+\[
+ (X_1^q-X_1, \ldots, X_n^q-X_n) \subseteq \ker \rho.
+\]
+Um Gleichheit zu zeigen betrachten wir die zugrunde liegenden $k$-Vektorräume. Wir bemerken, dass das Ideal $I := (X_1^q-X_1, \ldots, X_n^q-X_n)$ ein Untervektorraum von $k[X_1, \ldots, X_n]$ ist, und dass aufgrund des Homomorphiesatzes und der Isomorphiesätze
+\[
+ \mc{P}(V) \cong k[X_1, \ldots, X_n] / \ker \rho \cong (k[X_1, \ldots, X_n] / I)/(\ker \rho / I).
+\]
+Dabei ist $\dim_k \mc{P}(V) = \dim_k \Abb(V,k) = q^n$ und $\dim_k k[X_1, \ldots, X_n] / I = q^n$, da
+\[
+ \{X_1^{\nu_1} \cdots X_n^{\nu_n} : \nu_1, \ldots, \nu_n \in \{0,\ldots,q-1\}\}
+\]
+ein $k$-Basis von $k[X_1, \ldots, X_n] / I$ ist. Es muss daher $\dim_k \ker \rho/I = 0$, also $\ker \rho/I = 0$ und deshalb $\ker \rho \subseteq I$.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
