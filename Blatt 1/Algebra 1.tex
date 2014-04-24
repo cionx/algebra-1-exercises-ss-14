@@ -214,9 +214,9 @@ zu einem eindeutigen $k$-Algebrahomomorphismus $\psi : S(V^*) \to k[X_1, \ldots,
 
 Es ist $\psi \circ \phi : k[X_1, \ldots, X_n] \to k[X_1, \ldots, X_n]$ ein Ringhomomorphismus, und für alle $i=1,\ldots,n$ ist $(\psi \circ \phi)(X_i) = X_i$. Aufgrund der universellen Eigenschaft des Polynomrings ist daher $\psi \circ \phi = \id_{k[X_1, \ldots, X_n]}$. (Denn es gibt einen eindeutigen Ringhomomorphismus $k[X_1, \ldots, X_n] \to k[X_1, \ldots, X_n]$ mit $X_i \mapsto X_i$ für $i=1,\ldots,n$, und dieser ist offenbar $\id_{k[X_1, \ldots, X_n]}$.)
 
-$\phi$ ist offenbar auch $k$-linear und somit ein $k$-Algebrahomomorphismus. Also ist $\phi \circ \psi : S(V^*) \to S(V^*)$ ein $k$-Algebrahomomorphismus. Da $(\phi \circ \psi)(x_i) = x_i$ für alle $i=1,\ldots,n$ muss wegen der universellen Eigenschaft von der symmetrischen Algebra bereits $\phi \circ \psi = \id_{S(V^*)}$. (Denn es gibt einen eindeutigen $k$-Algebraho\-mo\-mor\-phis\-mus $S(V^*) \to S(V^*)$  mit $x_i \mapsto x_i$ für $i=1,\ldots,n$, und dieser ist offenbar $\id_{S(V^*)}$).
+$\phi$ ist offenbar auch $k$-linear und somit ein $k$-Algebrahomomorphismus. Also ist $\phi \circ \psi : S(V^*) \to S(V^*)$ ein $k$-Algebrahomomorphismus. Da $(\phi \circ \psi)(x_i) = x_i$ für alle $i=1,\ldots,n$ muss wegen der universellen Eigenschaft der symmetrischen Algebra bereits $\phi \circ \psi = \id_{S(V^*)}$. (Denn es gibt einen eindeutigen $k$-Algebraho\-mo\-mor\-phis\-mus $S(V^*) \to S(V^*)$, der die lineare Abbildung $\id_{V^*} : V^* \to V^*$ fortsetzt, und dieser ist offenbar $\id_{S(V^*)}$).
 
-Das zeigt, dass $\phi$ ein $k$-Algebraisomorphismus ist mit $\phi^{-1} = \psi$. Dieser ist aufgrund der universellen Eigenschaft des Polynomrings $k[X_1, \ldots, X_n]$ durch $\phi(X_i) = x_i$ für alle $i=1,\ldots,n$ eindeutig bestimmt (s.o.).wh
+Das zeigt, dass $\phi$ ein $k$-Algebraisomorphismus ist mit $\phi^{-1} = \psi$. Dieser ist durch die universellen Eigenschaft des Polynomrings $k[X_1, \ldots, X_n]$ und $\phi(X_i) = x_i$ für alle $i=1,\ldots,n$ eindeutig bestimmt.
 
 
 \subsection{}
@@ -250,7 +250,7 @@ induziert. Damit ergibt sich insgesamt ein $k$-Algebraisomorphismus
 \]
 Dieser ist gerade $\rho$. Das zeigt, dass $\rho$ ein $k$-Algebraisomorphismus ist, wenn $k$ unendlich ist.
 
-Ist $k$ endlich mit $q$ Elementen, so ist $\rho$ nicht injektiv, denn $k[X_1, \ldots, X_n]$ ist unendlich, aber $\mc{P}(V) \subseteq \Abb(V,k)$, und $\Abb(V,k)$ enthält nur endlich (genau $q^{q^n}$) viele Elemente.
+Ist $k$ endlich mit $q$ Elementen, so ist $\rho$ nicht injektiv, denn $k[X_1, \ldots, X_n]$ ist unendlich, aber $\mc{P}(V) \subseteq \Abb(V,k)$ und $\Abb(V,k)$ ist endlich, da $V$ und $k$ endlich sind.
 
 Es gilt sogar $\mc{P}(V) = \Abb(V,k)$: Um zu zeigen, dass $\Abb(V,k) \subseteq \mc{P}(V)$, bemerken wir, dass $\Abb(V,k)$ die $k$-Basis $\{\chi_v : v \in V\}$ besitzt. Für $v = \sum_{i=1}^n \lambda^v_i b^i \in V$ können wir die Polynomsfunktion $h^v \in \mc{P}(V)$ definieren als
 \[
@@ -261,19 +261,20 @@ Es ist $h^v(w) = 0$ genau dann wenn $w \neq v$ für alle $v, w \in V$. Daher ist
  \chi_v = \frac{1}{h^v(v)} h^v \in \mc{P}(V).
 \]
 
-Da $k$ aus $q$ Elementen besteht ist bekannt, dass das Polynom $X^q-X \in k[X]$ jedes Körperelement als Nullstelle hat. Daher ist $X_i^q-X_i \in \ker \rho$ für alle $i=1,\ldots,n$. Da $\rho$ ein Ringhomomorphismus ist, ist damit auch
+Da $k$ aus $q$ Elementen besteht ist bekanntermaßen $\lambda^q-\lambda = 0$ für alle $\lambda \in k$. Daher ist $X_i^q-X_i \in \ker \rho$ für alle $i=1,\ldots,n$. Da $\rho$ ein Ringhomomorphismus ist, ist damit auch
 \[
- (X_1^q-X_1, \ldots, X_n^q-X_n) \subseteq \ker \rho.
+ I:= (X_1^q-X_1, \ldots, X_n^q-X_n) \subseteq \ker \rho.
 \]
-Um Gleichheit zu zeigen betrachten wir die zugrunde liegenden $k$-Vektorräume. Wir bemerken, dass das Ideal $I := (X_1^q-X_1, \ldots, X_n^q-X_n)$ ein Untervektorraum von $k[X_1, \ldots, X_n]$ ist, und dass aufgrund des Homomorphiesatzes und der Isomorphiesätze
-\[
- \mc{P}(V) \cong k[X_1, \ldots, X_n] / \ker \rho \cong (k[X_1, \ldots, X_n] / I)/(\ker \rho / I).
-\]
+
+Um $\ker \rho \subseteq I$ zu zeigen betrachten wir die zugrunde liegenden $k$-Vektorräume. Da die Ideale $I$ und $\ker \rho$ Untervektorräume von $k[X_1, \ldots, X_n]$ sind, gilt aufgrund des Homomorphiesatzes und der Isomorphiesätze
+\begin{equation}\label{eq: Isomorphiesätze}
+ \mc{P}(V) \cong k[X_1, \ldots, X_n] / \ker \rho \cong (k[X_1, \ldots, X_n] / I)/(\ker \rho / I)
+\end{equation}
 Dabei ist $\dim_k \mc{P}(V) = \dim_k \Abb(V,k) = q^n$ und $\dim_k k[X_1, \ldots, X_n] / I = q^n$, da
 \[
  \{X_1^{\nu_1} \cdots X_n^{\nu_n} : \nu_1, \ldots, \nu_n \in \{0,\ldots,q-1\}\}
 \]
-ein $k$-Basis von $k[X_1, \ldots, X_n] / I$ ist. Es muss daher $\dim_k \ker \rho/I = 0$, also $\ker \rho/I = 0$ und deshalb $\ker \rho \subseteq I$.
+ein $k$-Basis von $k[X_1, \ldots, X_n] / I$ ist. Aus \eqref{eq: Isomorphiesätze} ergibt sich damit, dass $\dim_k \ker \rho/I = 0$, also $\ker \rho/I = 0$ und deshalb $\ker \rho \subseteq I$.
 
 
 
