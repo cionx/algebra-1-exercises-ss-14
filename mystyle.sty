@@ -11,14 +11,15 @@
 
 \renewcommand{\thesection}{Aufgabe \arabic{section}}
 \renewcommand{\thesubsection}{(\alph{subsection})}
+\renewcommand{\thesubsubsection}{(\roman{subsubsection})}
 
 % die Umgebungen mit kursiver Schrift
 \newcounter{saetze}
 \newtheorem{lem}[saetze]{Lemma}
-\newtheorem{bem}[saetze]{Bemerkung}
 
 % die Umgebungen mit normaler Schrift
 \theoremstyle{definition}
+\newtheorem{bem}[saetze]{Bemerkung}
 \newtheorem*{ia}{Induktionsanfang}
 \newtheorem*{is}{Induktionsschritt}
 
@@ -29,24 +30,27 @@
 \newcommand{\C}{\mathbb{C}}
 \newcommand{\F}{\mathbb{F}}
 
+\newcommand{\catname}[1]{\mathbf{#1}}
+\newcommand{\Rep}{\ensuremath{\catname{Rep}}}
+
 \newcommand{\mc}{\mathcal}
 
 \newcommand{\Maps}{\operatorname{Maps}}
 \newcommand{\Abb}{\operatorname{Abb}}
 \newcommand{\Hom}{\operatorname{Hom}}
 \newcommand{\End}{\operatorname{End}}
+\newcommand{\supp}{\operatorname{supp}}
 \newcommand{\GL}{\operatorname{GL}}
 \newcommand{\SL}{\operatorname{SL}}
-\newcommand{\supp}{\operatorname{supp}}
 
 \newcommand{\id}{\operatorname{id}}
 \newcommand{\can}{\operatorname{can}}
+\newcommand{\kchar}{\operatorname{char}}
+\newcommand{\tr}{\operatorname{tr}}
 
 \newcommand{\dotcup}{\ensuremath{\mathaccent\cdot\cup}}
 \newcommand{\bigdotcup}{\charfusion[\mathop]{\bigcup}{\cdot}}
 \newcommand{\vspan}{\operatorname{span}}
-\newcommand{\kchar}{\operatorname{char}}
-
 \newcommand{\vect}[1]{\begin{pmatrix}#1\end{pmatrix}}
 
 

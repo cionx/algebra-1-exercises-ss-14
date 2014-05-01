@@ -62,6 +62,221 @@ Ist andererseits $\Phi : kG \to \End(V)$ ein unitärer $k$-Algebra\-homo\-morhis
 
 
 
+\section{}
+Es bezeichnen $\pi : G \times V \to V$ und $\tau : G \times W \to W$ die entsprechenden $G$-Wirkungen, sowie für alle $g \in G$
+\[
+ \pi_g : V \to V, g \mapsto g.v \text{ und }
+ \tau_g : W \to W, g \mapsto g.w.
+\]
+Da $\pi$ und $\tau$ lineare Gruppenwirkungen sind, sind $\pi_g$ und $\tau_g$ $k$-linear für alle $g \in G$.
+
+
+\subsection{}
+Die gewöhnliche $G$-Wirkung auf $\Maps(W,V)$ ist definiert als
+\[
+ g.f = \pi_g \circ f \circ \tau_{g^{-1}}. \text{ für alle } f \in \Maps(W,V), g \in G.
+\]
+$\Hom_k(W,V)$ ist unter dieser Gruppenaktion abgeschlossen, da für jede $k$-lineare Abbildung $f : W \to V$ und alle $g \in G$ auch $\pi_g \circ f \circ \tau_{g^{-1}} : W \to V$ $k$-linear ist. Also induziert die $G$-Wirkung auf $\Maps(W,V)$ eine $G$-Wirkung
+\[
+ \sigma : G \times \Hom_k(W,V) \to \Hom_k(W,V).
+\]
+Da für alle $g \in G$ die Abbildung
+\[
+ \sigma_g : \Hom_k(W,V) \to \Hom_k(W,V), f \mapsto \pi_g \circ f \circ \tau_{g^{-1}}
+\]
+$k$-linear in $f$ ist, wirkt $\sigma$ linear auf $\Hom_k(W,V)$. Das zeigt, dass $\Hom_k(W,V)$ vermöge $\sigma$ eine Darstellung von $G$ ist.
+
+Im Falle $V = k$ hat $\sigma$ die Form
+\[
+ \sigma_g : W^* \to W^*, f \mapsto f \circ \tau_{g^{-1}}.
+\]
+Dies entspricht offenbar genau der dualen Darstellung von $G$.
+
+
+\subsection{}
+Da $V$ und $W$ endlichdimensional sind, ist
+\[
+ \varphi: V \otimes_k W^* \to \Hom_k(W,V), v \otimes \lambda \mapsto (w \mapsto \lambda(w) \cdot v)
+\]
+bekanntermaßen ein Isomorphismus von $k$-Vektorräumen. $\varphi$ ist auch $G$-äquivariant, da für alle $g \in G, v \in V, \lambda \in W^*, w \in W$
+\begin{align*}
+ \varphi(g.(v \otimes \lambda))(w)
+ &= \varphi((g.v) \otimes (g.\lambda))(w)
+ = (g.\lambda)(w) \cdot (g.v) \\
+ &= \lambda(g^{-1}.w) \cdot (g.v)
+\shortintertext{und}
+ (g.\varphi(v \otimes \lambda))(w)
+ &= (\pi_g \circ \varphi(v \otimes \lambda) \circ \tau_{g^{-1}})(w) \\
+ &= g.(\varphi(v \otimes \lambda)(g^{-1}.(w))) \\
+ &= g.(\lambda(g^{-1}.w) \cdot v)
+ = \lambda(g^{-1}.w) \cdot (g.v),
+\end{align*}
+also $\varphi(g.(v \otimes \lambda)) = g.\varphi(v \otimes \lambda)$ für alle $g \in G, v \in V, \lambda \in W^*$, und deshalb \mbox{$\varphi(g.x) = g.\varphi(x)$} für alle $g \in G, x \in V \otimes_k W^*$. (Die Elementartensoren $v \otimes \lambda$ mit $v \in V$ und $\lambda \in W^*$ sind ein Erzeugendensystem von $V \otimes_k W^*$, wegen der Linearität von $g.\varphi(x)$ und $\varphi(g.x)$ in $x$ genügt es daher die Gleichheit der beiden Funktionen für Elementartensoren zu überprüfen.)
+
+
+\subsection{}
+
+\subsubsection{}
+Es ist klar, dass die Abbildung
+\[
+ \varphi : k \to \End_k(V), x \mapsto x \id_V
+\]
+$k$-linear ist. Sie ist auch $g$-äquivariant, da für alle $g \in G, \lambda \in k, v \in V$
+\begin{align*}
+ (g.\varphi(\lambda))(v)
+ &= (\pi_g \circ \varphi(\lambda) \circ \pi_{g^{-1}})(v)
+ = g.(\varphi(\lambda)(g^{-1}.v))
+ = g.(\lambda(g^{-1}.v)) \\
+ &= \lambda(g.g^{-1}.v)
+ = \lambda v
+ = \varphi(\lambda)(v)
+ = \varphi(g.\lambda)(v),
+\end{align*}
+also $g.\varphi(\lambda) = \varphi(g.\lambda)$ für alle $g \in G, \lambda \in k$.
+
+\subsubsection{}
+Da die Abbildung $V \times V^* \to k, (v,\lambda) \mapsto \lambda(v)$ offenbar $k$-bilinear ist, induziert sie eine lineare Abbildung
+\[
+ \varphi : V \otimes V^* \to k, v \otimes \lambda \mapsto \lambda(v).
+\]
+Diese ist $g$-äquivariant, da für alle $g \in G, v \in V, \lambda \in V^*$
+\begin{align*}
+ \varphi(g.(v \otimes \lambda))
+ &= \varphi((g.v) \otimes (g.\lambda))
+ = (g.\lambda)(g.v) \\
+ &= \lambda(g^{-1}.g.v) 
+ = \lambda(v)
+ = g.\lambda(v)
+ = g.\varphi(v \otimes \lambda).
+\end{align*}
+
+Der Isomorphismus $V \otimes V^* \cong \End_k(V)$ ist durch
+\[
+ f: V \otimes V^* \to \End_k(V), v \otimes \lambda \mapsto (w \mapsto \lambda(w) \cdot v)
+\]
+gegeben. Dieser induziert eine eindeutige Abbildung $\psi : \End_k(V) \to k$, so dass das Diagramm in Abbildung \ref{fig: induziert} kommutiert.
+\begin{figure}\centering
+ \begin{tikzpicture}[node distance = 6em, auto]
+  \node (k) {$k$};
+  \node (Tensor) [above left of = k] {$V \otimes V^*$};
+  \node (End) [above right of = k] {$\End_k(V)$};
+  \draw[->] (Tensor) to node {$f$} (End);
+  \draw[->] (Tensor) to node [swap] {$\varphi$} (k);
+  \draw[->,dashed] (End) to node {$\exists!\psi$} (k);
+ \end{tikzpicture}
+ \caption{Die induzierte Abbildung $\psi$.}
+ \label{fig: induziert}
+\end{figure}
+Offenbar ist $\psi = \varphi f^{-1}$.
+
+Es sei $v_1, \ldots, v_n$ eine Basis von $V$ und $v_1^*, \ldots, v_n^*$ die entsprechende duale Basis von $V^*$. Dann ist $(v_i \otimes v_j^*)_{1 \leq i,j \leq n}$ eine Basis von $V \otimes V^*$, und $(E_{ij})_{1 \leq i,j \leq n}$ eine Basis von $\End_k(V)$, wobei
+\[
+ E_{ij}(v_k) = \delta_{jk} v_i =
+ \begin{cases}
+  v_i & \text{ falls } k=j, \\
+    0 & \text{ sonst}.
+ \end{cases}
+\]
+Da für alle $1 \leq i,j,k \leq n$
+\[
+ f(v_i \otimes v_j^*)(v_k)
+ = v_j^*(v_k)\cdot v_i
+ = \delta_{jk} v_i
+ = E_{ij}(v_k)
+\]
+ist $f(v_i \otimes v_j^*) = E_{ij}$ für alle $1 \leq i,j \leq n$. Für $A \in \End_k(V)$ mit $A = \sum_{i,j=1}^n a_{ij} E_{ij}$ ist daher
+\begin{align*}
+ \psi(A)
+ &= \psi\left( \sum_{i,j=1}^n a_{ij} E_{ij} \right)
+ = \sum_{i,j=1}^n a_{ij} \psi(E_{ij})
+ = \sum_{i,j=1}^n a_{ij} \varphi(f^{-1}(E_{ij})) \\
+ &= \sum_{i,j=1}^n a_{ij} \varphi(v_i \otimes v_j^*)
+ = \sum_{i,j=1}^n a_{ij} v_j^*(v_i)
+ = \sum_{i,j=1}^n a_{ij} \delta_{ij}
+ = \sum_{i=1}^n a_{ii}
+ = \tr(A).
+\end{align*}
+Es ist also $\psi = \tr$.
+
+
+\subsection{}
+\begin{bem}
+Wir fixieren eine Gruppe $G$ und einen Körper $k$. Es bezeichne $\Rep_G^k$ die Kategorie, deren Objekte die Darstellungen von $G$ über $k$ sind, zusammen mit den Morphismen
+\[
+ \Hom_{\Rep_G^k}(V,W) = \Hom_G(V,W)
+\]
+für alle Darstellungen von $V,W$ von $G$ über $k$. Die Verknüpfung zweier Morphismen ist ihre Verknüpfung als Funktionen. (Es ist bekannt, dass $\Rep_G^k$ tatsächlich eine Kategorie ist.)
+
+Wir bemerken zunächst, dass für $V \in \Rep_G^k$
+\[
+ V^G = \{v \in V : g.v = v \text{ für alle } g \in G\}
+\]
+eine Unterdarstellung von $G$ ist, auf der $G$ trivial wirkt.
+
+\begin{proof}
+ Sei $V \in \Rep_G^k$ beliebig aber fest. Bezeichnet $\pi : G \times V \to V$ die Gruppenwirkung auf $V$, so ist
+ \begin{align*}
+  V^G
+  &= \bigcap_{g \in G} \{v \in V : g.v = v\}
+  = \bigcap_{g \in G} \{v \in V : \pi_g(v) = v\} \\
+  &= \bigcap_{g \in G} \{v \in V : (\pi_g-\id_V)(v) = 0\}
+  = \bigcap_{g \in G} \ker(\pi_g - \id_V)
+ \end{align*}
+ ein Untervektorraum von $V$. Dass $G$ trivial auf $V^G$ wirkt ist offensichtlich.
+\end{proof}
+
+Als Nächstes bemerken wir, dass für $V,W \in \Rep_G^k$ jeder Homomorphismus von Darstellungen $f \in \Hom_G(V,W)$ durch Einschränkung einen Homomorphismus (von Darstellungen) $f^G : V^G \to W^G$ induziert.
+\begin{proof}
+ Für alle $v \in V^G$ ist
+ \[
+  g.(f(v)) = f(g.v) = f(v) \text{ für alle } g \in G,
+ \]
+ also $f(v) \in W^G$ für alle $v \in V^G$. Daher ist
+ \[
+  f^G : V^G \to W^G, v \mapsto f(v)
+ \]
+ eine wohldefinierte $k$-lineare Abbildung. Dass $f$ $G$-äquivariant ist, folgt direkt daraus, dass $G$ trivial auf $V^G$ und $W^G$ wirkt.
+\end{proof}
+
+Zusammengefasst ergibt dies, dass $T : \Rep_G^k \to \Rep_G^k$ mit
+\begin{align*}
+ T(V) &:= V^G \text{ für alle } V \in \Rep_G^k \text{ und } \\
+ T(f) &:= f^G \text{ für alle } f \in \Hom_G(V,W) \text{ mit } V,W \in \Rep_G^k
+\end{align*}
+ein (kovarianter) Funktor ist.
+
+\begin{proof}
+  Es ist klar, dass $T(\id_V) = \id_V^V = \id_{T(V)}$ für alle $V \in \Rep_G^k$. Auch ist klar, dass $T$ mit der Komposition verträglich ist, da es sich bei $T(f)$ für $f \in \Hom_G(V,W)$ um die Einschränkung von $f$ handelt.
+\end{proof}
+\end{bem}
+
+Seien nun $G$ und $k$ wieder wie in der Aufgabe. Wir wissen, dass
+\[
+ \Hom_k(k,V) \in \Rep_G^k \text{ und } V \in \Rep_G^k.
+\]
+Die Abbildung 
+\[
+ \varphi: \Hom_k(k,V) \to V, f \mapsto f(1)
+\]
+ist offenbar ein Isomorphismus von $K$-Vektorräumen. $\varphi$ ist auch $G$-äquivariant, da für alle $g \in G$ und $f \in \Hom_k(k,V)$
+\[
+ \varphi(g.f) = (g.f)(1) = g.f(g^{-1}.1) = g.f(1) = g.\varphi(f).
+\]
+Es ist also $\varphi$ ein Isomorphismus von Darstellungen. Da $T$ (definiert wie in der Bemerkung) ein Funktor ist, erhalten wir einen Isomorphismus von Darstellungen
+\[
+ \psi : (\Hom_k(k,V))^G \to V^G, f \mapsto f(1).
+\]
+Da $(\Hom_k(k,V))^G = \Hom_G(k,V)$ zeigt dies die Aussage.
+
+
+
+
+
+
+
+
+
+
 
 
 \end{document}
