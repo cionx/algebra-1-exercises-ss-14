@@ -310,6 +310,42 @@ Das zeigt, dass $\varphi$ ein Isomorphismus von Darstellungen ist.
 
 
 
+\section{}
+Es sei $k$ ein Körper mit $\kchar k \neq 2$. Wir definieren einen Isomorphismus von $k$-Vektorräumen durch
+\[
+ \varphi: k S_2 \to k \times k \text{ mit } \varphi(e) = (1,1) \text{ und } \varphi(s) = (1,-1).
+\]
+Da $\kchar k \neq 2$ ist $-1 \neq 1$, also $\varphi$ tatsächlich ein $k$-Vektorraumisomorphismus. $\varphi$ ist auf der Basis $\{e,s\}$ von $k S_2$ offenbar multiplikativ, d.h. für alle $x,y \in \{e,s\}$ ist $\varphi(xy) = \varphi(x)\varphi(y)$. Da $\varphi$ linear ist, ist $\varphi$ daher auch ein Ringhomomorphismus. Da $\varphi(1_{k S_2}) = \varphi(e) = 1_{k \times k}$ ist $\varphi$ auch unitär. Das zeigt, dass $\varphi$ ein $k$-Algebra\-iso\-morph\-is\-mus ist. Da $k \cong \Mat(1 \times 1, k)$ zeigt dies, dass $k S_2$ isomorph zu einem Produkt von $k$-Matrixalgebren ist. Der Fall $k = \C$ ist ein Sonderfall hiervon, da $\kchar \C = 0$.
+
+Ist $\kchar k = 2$, so ist eine Zerlegung nicht möglich: Wir nehmen an, es wäre möglich. Da $\dim_k kS_2 = 2$ muss eine solche Zerlegung von der Form
+\[
+ \varphi : k S_2 \cong k \times k
+\]
+sein. Damit $\varphi$ ein $K$-Algebraisomorphismus ist, muss
+\[
+ \varphi(e) = \varphi(1_{kS_2}) = 1_{k \times k} = (1,1).
+\]
+Da $s^2 = 1$ muss $\varphi(s)^2 = 1_{k \times k}$, mit $(x,y) := \varphi(s)$ also
+\[
+ (1,1) = (x,y)^2 = (x^2,y^2).
+\]
+Da $\kchar k = 2$ ist aber
+\[
+ x^2 = 1 \Leftrightarrow x^2 -1 = 0 \Leftrightarrow (x-1)^2 = 0 \Leftrightarrow x = 1,
+\]
+weshalb dann
+\[
+ \varphi(s) = (1,1) = \varphi(e).
+\]
+Dies steht im Widerspruch zur Injektivität von $\varphi$.
+
+
+
+
+
+
+
+
 
 
 
