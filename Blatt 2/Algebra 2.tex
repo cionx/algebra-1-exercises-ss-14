@@ -272,6 +272,51 @@ Da $(\Hom_k(k,V))^G = \Hom_G(k,V)$ zeigt dies die Aussage.
 
 
 
+\section{}
+Es bezeichne $\pi : G \times V \to V$ die $G$-Wirkung auf $V$ und $\pi^* : G \times V^* \to V^*$ die duale $G$-Wirkung auf $V^*$.
+
+Es sei
+\[
+ S := \vect{0 & -1 \\ 1 & 0}.
+\]
+Da $\det S = 1 \neq 0$ ist $S \in \GL_2(k)$. Für alle $A \in \SL_2(k)$ ist $SAS^{-1} = (A^{-1})^T$, denn mit
+\[
+ A = \vect{a & b \\ c & d},
+\]
+ist $1 = \det A = ad-bc$, also
+\begin{align*}
+ SAS^{-1}
+ &= \vect{0 & -1 \\ 1 & 0} \vect{a & b \\ c & d} \vect{0 & 1 \\ -1 & 0}
+ = \vect{0 & -1 \\ 1 & 0} \vect{-b & a \\ -d & c} \\
+ &= \vect{d & -c \\ -b & a}
+ = \vect{d & -b \\ -c & a}^T
+ = \left(A^{-1}\right)^T.
+\end{align*}
+
+Bezüglich der kanonischen Basis $e_1, e_2$ von $V$ und der dualen Basis $e_1^*, e_2^*$ von $V^*$ beschreibt $S$ einen Vektorraumisomorphismus
+\[
+ \varphi : V \to V^* \text{ mit } \varphi(e_1) =  e_2^* \text{ und } \varphi(e_2) = -e_1^*.
+\]
+Wir behaupten, dass $\varphi$ $G$-äquivariant. Hierzu bemerken wir, dass für alle $A \in G = \SL_2$ die darstellende Matrix von $\pi_A$ bezüglich $e_1, e_2$ gerade $A$ ist, und die darstellende Matrix von $\pi^*_A$ bezüglich $e_1^*, e_2^*$ damit, wie aus den Anwesenheitsaufgaben bekannt, $(A^{-1})^T$. $\varphi$ hat bezüglich der Basen $e_1, e_2$ und $e_1^*, e_2^*$ die darstellende Matrix $S$. Es ist daher
+\begin{align*}
+ \varphi \text{ ist $G$-äquivariant }
+ &\Leftrightarrow \pi^*_A \circ \varphi = \varphi \circ \pi_A \text{ für alle } A \in G \\
+ &\Leftrightarrow \left(A^{-1}\right)^T S = S A \text{ für alle } A \in \SL_2(k) \\
+ &\Leftrightarrow \left(A^{-1}\right)^T = S A S^{-1} \text{ für alle } A \in \SL_2(k).
+\end{align*}
+Das zeigt, dass $\varphi$ ein Isomorphismus von Darstellungen ist.
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
