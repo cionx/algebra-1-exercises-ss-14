@@ -19,5 +19,49 @@
 
 
 
+\section{}
+Wir gehen im Folgenden davon aus, dass $kG$-Moduln als unitär verstanden werden, da die Aussage sonst offenbar nicht stimmt.
+
+Es sei $\pi : G \times V \to V$ eine lineare Gruppenwirkung auf $V$. Diese entspricht einem Gruppenhomomorphismus $\tilde{\pi} : G \to \GL(V), g \mapsto \pi_g$ mit $\pi_g : v \mapsto g.v$. Wir können diesen zu einer Abbildung $\bar{\pi} : G \to \End(V), g \mapsto \pi_g$ ergänzen. Da der zugrundelegende $k$-Vektorraum von $kG$ der freie $k$-Vektorraum über $G$ ist, lässt sich $\bar{\pi}$ durch die universelle Eigenschaft des freien Vektorraums zu einer linearen Abbildung $\tau : kG \to \End(V)$ ergänzen, d.h. für alle $\sum_{g \in G} a_g g \in kG$ ist
+\[
+ \tau\left( \sum_{g\in G} a_g g\right) = \sum_{g \in G} a_g \bar{\pi}(g) = \sum_{g \in G} a_g \pi_g.
+\]
+Da $G$ eine $k$-Basis von $kG$ ist, und $\tau$ auf dieser Basis multiplikativ ist (denn $\tau_{|G} = \bar{\pi}$), ist $\tau$ auch ein Ringhomomorphismus, d.h. für alle $\sum_{g \in G} a_g g, \sum_{h \in G} b_h h \in kG$ ist
+\begin{align*}
+ &\, \tau\left( \left(\sum_{g \in G} a_g g\right) \cdot \left(\sum_{h \in G} b_h h\right) \right)
+ = \tau\left( \sum_{g, h \in G} a_g b_h g h \right) \\
+ =&\, \sum_{g,h \in G} a_g b_h \pi_{g h}
+ = \sum_{g,h \in G} a_g b_h \pi_g \pi_h
+ = \left(\sum_{g \in G} a_g \pi_g\right) \left(\sum_{h \in G} b_h \pi_h\right) \\
+ =&\, \tau\left(\sum_{g \in G} a_g g\right) \tau\left(\sum_{h \in G} b_h h\right).
+\end{align*}
+Da auch $\tau(1_{kG}) = \tau(e) = \pi_e = 1_{\End(V)}$ ist $\tau : kG \to \End(V)$ ein unitaler $k$-Algebrahomomorphismus. Bekanntermaßen entspricht $\tau$ einer $kG$-Modulstruktur auf $V$ via
+\begin{align*}
+ \left(\sum_{g \in G} a_g g\right) \cdot v
+ &:= \tau\left(\sum_{g \in G} a_g g\right)(v)
+ = \left(\sum_{g \in G} a_g \pi_g\right)(v) \\
+ &= \sum_{g \in G} a_g \pi_g(v)
+ = \sum_{g \in G} a_g (g.v).
+\end{align*}
+
+Andererseits entspricht eine $kG$-Modulstruktur auf $V$ einem unitären $k$-Algebra\-homo\-morphismus $\Phi : kG \to \End(V), x \mapsto (v \mapsto x \cdot v)$. Insbesondere ist $\Phi$ ein unitärer Ringhomomorphismus, und induziert daher einen Gruppenhomomorphismus der Einheitengruppen
+\[
+ \tilde{\phi} : (kG)^\times \to (\End(V))^\times = \GL(V).
+\]
+Da $G \subseteq (kG)^\times$ eine Unterguppe ist (denn $g$ hat in $kG$ das Inverse $g^{-1}$) beschränkt sich $\tilde{\phi}$ zu einem Gruppenhomomorphismus $\phi : G \to \GL(V)$. $\phi$ entspricht einer linearen $G$-Gruppenwirkung auf $V$ via $g.v = \phi(g)(v)$ für alle $g \in G, v \in V$.
+
+Die beiden Konstruktionen sind invers zueinander: Es sei $\pi : G \times V \to V$ eine lineare Gruppenwirkung auf $V$, $\tilde{\tau} : kG \to \End(V)$ der entsprechende $k$-Algebra\-homo\-morphismus, wie oben konstruiert, und $\pi' : G \to \GL(V)$ der Gruppenhomomorphismus, der wie oben durch Einschränkung von $\tau$ auf $G$ entsteht. Da für alle $g \in G, v \in V$
+\[
+ \pi'(g)(v) = \tau(g)(v) = \pi_g(v) = g.v
+\]
+ist die lineare Gruppenaktion, die $\pi'$ entspricht, genau $\pi$.
+
+Ist andererseits $\Phi : kG \to \End(V)$ ein unitärer $k$-Algebra\-homo\-morhismus, $\pi : G \to \GL(V)$ der wie oben beschriebene, durch Einschränkung entstehende Gruppenhomomorphismus, und $\Psi : kG \to \End(V)$ der aus $\pi$ entstehende $k$-Algebra\-homo\-morphismus. Es ist klar, dass $\Phi$ und $\Psi$ auf $G \subseteq kG$ übereinstimmen. Da $G$ eine $k$-Basis von $kG$ ist, ist daher $\Phi = \Psi$.
+
+
+
+
+
+
 
 \end{document}
