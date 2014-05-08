@@ -199,6 +199,55 @@ nur eindimensional ist. Dieser Widerspruch zeigt, dass $\F_3 G$ unzerlegbar ist.
 
 
 
+\section{}
+
+
+\subsection{}
+Für alle $1 \leq i \leq n$ sei $\xi_i \in \End(k[x_1, \ldots, x_n])$ definiert als $\xi_i(p) := x_i \cdot p$ für alle $p \in k[x_1, \ldots, x_n]$ die Multiplikation mit $x_i$, und $\zeta_i \in \End(k[x_1, \ldots, x_n])$ definiert als $\zeta_i(p) := \partial p / \partial x_i$ für alle $p \in k[x_1, \ldots, x_n]$ die formale Ableitung nach $x_i$.
+
+Nach der universellen Eigenschaft der freien Algebra gibt es einen eindeutigen $K$-Algebrahomomorphismus $\psi : k\gen{X_1, \ldots, X_n, \partial_1, \ldots, \partial_n} \to \End(V)$, so dass $\psi(X_i) = \xi_i$ und $\psi(\partial_i) = \zeta_i$ für alle $1 \leq i \leq n$.
+
+Wir bemerken, nun, dass $I \subseteq \ker \psi$: Es ist klar, dass die Endomorphismen $\xi_i$ und $\xi_j$ für alle $1 \leq i, j \leq n$ miteinander kommutieren, und daher $X_i X_j - X_j X_i \in \ker \psi$ für alle $1 \leq i,j \leq n$. Genau so ist es auch klar, dass $\partial_i \partial_j - \partial_j \partial_i \in \ker \psi$ für alle $1 \leq i,j \leq n$ und $\partial_i X_j - X_j \partial_i \in \ker \psi$ für alle $1 \leq i,j \leq n$ mit $i \leq j$. Es ist allerdings $\partial_j X_j - X_j \partial_j \in \ker \psi$ für kein $1 \leq i \leq n$, denn für alle
+\[
+ p
+ a= \sum_{i_1, \ldots, i_n \geq 0} \lambda_{i_1, \ldots, i_n} x_1^{i_1} \cdots x_n^{i_n} \in k[x_1, \ldots, x_n]
+\]
+ist für alle $1 \leq j \leq n$
+\begin{align*}
+  &\,\psi(\partial_j X_j - X_j \partial_j)(p) 
+ =   \zeta_j(\xi_j(p)) - \xi_j(\zeta_j(p)) \\
+ =&\, \sum_{i_1, \ldots, i_n \geq 0} (i_j+1) \lambda_{i_1, \ldots, i_n} x_1^{i_1} \cdots x_n^{i_n}
+ - \sum_{i_1, \ldots, i_n \geq 0} i_j \lambda_{i_1, \ldots, i_n} x_1^{i_1} \cdots x_n^{i_n} \\
+ =&\, \sum_{i_1, \ldots, i_n \geq 0} \lambda_{i_1, \ldots, i_n} x_1^{i_1} \cdots x_n^{i_n}
+ = p
+ = \psi(1)(p)
+\end{align*}
+Zusammen mit $\partial_i X_j - X_j \partial_i \in \ker \psi$ für alle $1 \leq i, j \leq n$ mit $i \neq j$ zeigt dies, dass
+\[
+ \partial_i Xj - X_j \partial_i - \delta_{ij} 1 \in \ker \psi \text{ für alle } 1 \leq i,j \leq n.
+\]
+
+Da $\ker \psi$ ein beidseitiges Ideal ist, ist damit $I \subseteq \ker \psi$. Nach dem Homomorphisatz faktorisiert $\psi$ als eindeutiger $K$-Algebrahomomorphismus
+\[
+ \varphi : k\gen{X_1, \ldots, X_n, \partial_1, \ldots, \partial_n}/I \to \End(k[x_1, \ldots, x_n]).
+\]
+Dieser entspricht bekanntermaßen einer $\mc{A}$-Modulstruktur auf $k[x_1, \ldots, x_n]$ via
+\[
+ a \cdot p = \varphi(a)(p) \text{ für alle } a \in \mc{A}, p \in k[x_1, \ldots, x_n].
+\]
+Nach der Konstruktion von $\varphi$ ist dabei
+\begin{equation}\label{eq: A-Modulstruktur}
+ X_i \cdot p = \xi_i(p) \text{ und } \partial_i \cdot p = \zeta_i(z)
+ \text{ für alle } 1 \leq i \leq n, p \in k[x_1, \ldots, x_n].
+\end{equation}
+(Wir arbeiten hier etwas unsauber, indem wir nicht zwischen das Element $X_i \in k\gen{X_1, \ldots, X_n, \partial_1, \ldots, \partial_n}$ und die entsprechende Restklasse $\overline{X_i} \in \mc{A}$ gleich notieren.)
+
+Es ist klar, dass die von $\varphi$ induzierte $\mc{A}$-Modulstruktur auf $k[x_1, \ldots, x_n]$ die eindeutige $\mc{A}$-Modulstruktur auf $k[x_1, \ldots, x_n]$ ist, die \eqref{eq: A-Modulstruktur} erfüllt, denn $\mc{A}$ wird als $K$-Algebra von den Elementen $X_1, \ldots, X_n, \partial_1, \ldots, \partial_n$ erzeugt, und die Wirkung dieser Elemente auf $k[x_1, \ldots, x_n]$ ist durch \eqref{eq: A-Modulstruktur} eindeutig bestimmt.
+
+
+
+
+
 
 
 
