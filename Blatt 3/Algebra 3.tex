@@ -203,18 +203,18 @@ nur eindimensional ist. Dieser Widerspruch zeigt, dass $\F_3 G$ unzerlegbar ist.
 
 
 \subsection{}
-Für alle $1 \leq i \leq n$ sei $\xi_i \in \End(k[x_1, \ldots, x_n])$ definiert als $\xi_i(p) := x_i \cdot p$ für alle $p \in k[x_1, \ldots, x_n]$ die Multiplikation mit $x_i$, und $\zeta_i \in \End(k[x_1, \ldots, x_n])$ definiert als $\zeta_i(p) := \partial p / \partial x_i$ für alle $p \in k[x_1, \ldots, x_n]$ die formale Ableitung nach $x_i$.
+Für alle $1 \leq i \leq n$ sei $\xi_i \in \End(k[x_1, \ldots, x_n])$ definiert als $\xi_i(p) := x_i \cdot p$ für alle $p \in k[x_1, \ldots, x_n]$ die Multiplikation mit $x_i$, und $\zeta_i \in \End(k[x_1, \ldots, x_n])$ definiert als $\zeta_i(p) := \del p / \del x_i$ für alle $p \in k[x_1, \ldots, x_n]$ die formale Ableitung nach $x_i$.
 
-Nach der universellen Eigenschaft der freien Algebra gibt es einen eindeutigen $K$-Algebrahomomorphismus $\psi : k\gen{X_1, \ldots, X_n, \partial_1, \ldots, \partial_n} \to \End(V)$, so dass $\psi(X_i) = \xi_i$ und $\psi(\partial_i) = \zeta_i$ für alle $1 \leq i \leq n$.
+Nach der universellen Eigenschaft der freien Algebra gibt es einen eindeutigen $K$-Algebrahomomorphismus $\psi : k\gen{X_1, \ldots, X_n, \del_1, \ldots, \del_n} \to \End(V)$, so dass $\psi(X_i) = \xi_i$ und $\psi(\del_i) = \zeta_i$ für alle $1 \leq i \leq n$.
 
-Wir bemerken, nun, dass $I \subseteq \ker \psi$: Es ist klar, dass die Endomorphismen $\xi_i$ und $\xi_j$ für alle $1 \leq i, j \leq n$ miteinander kommutieren, und daher $X_i X_j - X_j X_i \in \ker \psi$ für alle $1 \leq i,j \leq n$. Genau so ist es auch klar, dass $\partial_i \partial_j - \partial_j \partial_i \in \ker \psi$ für alle $1 \leq i,j \leq n$ und $\partial_i X_j - X_j \partial_i \in \ker \psi$ für alle $1 \leq i,j \leq n$ mit $i \leq j$. Es ist allerdings $\partial_j X_j - X_j \partial_j \in \ker \psi$ für kein $1 \leq i \leq n$, denn für alle
+Wir bemerken, nun, dass $I \subseteq \ker \psi$: Es ist klar, dass die Endomorphismen $\xi_i$ und $\xi_j$ für alle $1 \leq i, j \leq n$ miteinander kommutieren, und daher $X_i X_j - X_j X_i \in \ker \psi$ für alle $1 \leq i,j \leq n$. Genau so ist es auch klar, dass $\del_i \del_j - \del_j \del_i \in \ker \psi$ für alle $1 \leq i,j \leq n$ und $\del_i X_j - X_j \del_i \in \ker \psi$ für alle $1 \leq i,j \leq n$ mit $i \leq j$. Es ist allerdings $\del_j X_j - X_j \del_j \in \ker \psi$ für kein $1 \leq i \leq n$, denn für alle
 \[
  p
  a= \sum_{i_1, \ldots, i_n \geq 0} \lambda_{i_1, \ldots, i_n} x_1^{i_1} \cdots x_n^{i_n} \in k[x_1, \ldots, x_n]
 \]
 ist für alle $1 \leq j \leq n$
 \begin{align*}
-  &\,\psi(\partial_j X_j - X_j \partial_j)(p) 
+  &\,\psi(\del_j X_j - X_j \del_j)(p) 
  =   \zeta_j(\xi_j(p)) - \xi_j(\zeta_j(p)) \\
  =&\, \sum_{i_1, \ldots, i_n \geq 0} (i_j+1) \lambda_{i_1, \ldots, i_n} x_1^{i_1} \cdots x_n^{i_n}
  - \sum_{i_1, \ldots, i_n \geq 0} i_j \lambda_{i_1, \ldots, i_n} x_1^{i_1} \cdots x_n^{i_n} \\
@@ -222,14 +222,14 @@ ist für alle $1 \leq j \leq n$
  = p
  = \psi(1)(p)
 \end{align*}
-Zusammen mit $\partial_i X_j - X_j \partial_i \in \ker \psi$ für alle $1 \leq i, j \leq n$ mit $i \neq j$ zeigt dies, dass
+Zusammen mit $\del_i X_j - X_j \del_i \in \ker \psi$ für alle $1 \leq i, j \leq n$ mit $i \neq j$ zeigt dies, dass
 \[
- \partial_i Xj - X_j \partial_i - \delta_{ij} 1 \in \ker \psi \text{ für alle } 1 \leq i,j \leq n.
+ \del_i Xj - X_j \del_i - \delta_{ij} 1 \in \ker \psi \text{ für alle } 1 \leq i,j \leq n.
 \]
 
 Da $\ker \psi$ ein beidseitiges Ideal ist, ist damit $I \subseteq \ker \psi$. Nach dem Homomorphisatz faktorisiert $\psi$ als eindeutiger $K$-Algebrahomomorphismus
 \[
- \varphi : k\gen{X_1, \ldots, X_n, \partial_1, \ldots, \partial_n}/I \to \End(k[x_1, \ldots, x_n]).
+ \varphi : k\gen{X_1, \ldots, X_n, \del_1, \ldots, \del_n}/I \to \End(k[x_1, \ldots, x_n]).
 \]
 Dieser entspricht bekanntermaßen einer $\mc{A}$-Modulstruktur auf $k[x_1, \ldots, x_n]$ via
 \[
@@ -237,12 +237,112 @@ Dieser entspricht bekanntermaßen einer $\mc{A}$-Modulstruktur auf $k[x_1, \ldot
 \]
 Nach der Konstruktion von $\varphi$ ist dabei
 \begin{equation}\label{eq: A-Modulstruktur}
- X_i \cdot p = \xi_i(p) \text{ und } \partial_i \cdot p = \zeta_i(z)
+ X_i \cdot p = \xi_i(p) \text{ und } \del_i \cdot p = \zeta_i(z)
  \text{ für alle } 1 \leq i \leq n, p \in k[x_1, \ldots, x_n].
 \end{equation}
-(Wir arbeiten hier etwas unsauber, indem wir nicht zwischen das Element $X_i \in k\gen{X_1, \ldots, X_n, \partial_1, \ldots, \partial_n}$ und die entsprechende Restklasse $\overline{X_i} \in \mc{A}$ gleich notieren.)
+(Wir arbeiten hier etwas unsauber, indem wir nicht zwischen das Element $X_i \in k\gen{X_1, \ldots, X_n, \del_1, \ldots, \del_n}$ und die entsprechende Restklasse $\overline{X_i} \in \mc{A}$ gleich notieren.)
 
-Es ist klar, dass die von $\varphi$ induzierte $\mc{A}$-Modulstruktur auf $k[x_1, \ldots, x_n]$ die eindeutige $\mc{A}$-Modulstruktur auf $k[x_1, \ldots, x_n]$ ist, die \eqref{eq: A-Modulstruktur} erfüllt, denn $\mc{A}$ wird als $K$-Algebra von den Elementen $X_1, \ldots, X_n, \partial_1, \ldots, \partial_n$ erzeugt, und die Wirkung dieser Elemente auf $k[x_1, \ldots, x_n]$ ist durch \eqref{eq: A-Modulstruktur} eindeutig bestimmt.
+Es ist klar, dass die von $\varphi$ induzierte $\mc{A}$-Modulstruktur auf $k[x_1, \ldots, x_n]$ die eindeutige $\mc{A}$-Modulstruktur auf $k[x_1, \ldots, x_n]$ ist, die \eqref{eq: A-Modulstruktur} erfüllt, denn $\mc{A}$ wird als $K$-Algebra von den Elementen $X_1, \ldots, X_n, \del_1, \ldots, \del_n$ erzeugt, und die Wirkung dieser Elemente auf $k[x_1, \ldots, x_n]$ ist durch \eqref{eq: A-Modulstruktur} eindeutig bestimmt.
+
+
+\subsection{}
+Es ist klar, dass die Elemente der Form
+\[
+ a_1 \cdots a_r \in \mc{A} \text{ mit }r \in \N \text{ und } a_i \in \{X_1, \ldots, X_n, \del_1, \ldots, \del_n\} \text{ für alle } 1 \leq i \leq r
+\]
+ein Erzeugendensystem von $\mc{A}$ als $k$-Vektorraum sind. Es genügt daher zu zeigen, dass sich jedes solche Element als $k$-Linearkombination von den Elementen $X^\alpha \del^\beta$ mit $\alpha, \beta \in \N^n$ schreiben lässt. Wir zeigen dies per Induktion über $r$.
+
+Für $r = 0$ und $r = 1$ ist die Aussage klar. Es sei daher $r \geq 2$ und es gelte die Aussage für $r-1$. Es seien $a_1, \ldots, a_r \in \{X_1, \ldots, X_n, \del_1, \ldots, \del_n\}$ beliebig aber fest. Ist $a_i \in \{\del_1, \ldots, \del_n\}$ für alle $1 \leq i \leq r$ so kommutieren die $a_i$ miteinander und die Aussage ist klar.
+
+Ist $a_1 = X_j$ für ein $1 \leq j \leq n$ so können wir $a_2 \cdots a_r$ nach Induktionsvoraussetzung als
+\[
+ a_2 \cdots a_n = \sum_{\alpha, \beta \in \N^n} \lambda_{\alpha, \beta} X^\alpha \del^\beta
+\]
+schreiben. Da die $X_i$ miteinander kommutieren ist dann auch
+\[
+ a_1 \cdots a_n
+ = Xj \sum_{\alpha, \beta \in \N^n} \lambda_{\alpha, \beta} X^\alpha \del^\beta
+ = \sum_{\alpha, \beta \in \N^n} \lambda_{\alpha, \beta} X_j X^\alpha \del^\beta
+\]
+eine entsprechende $k$-Linearkombination.
+
+Ist keiner der beiden oberen Fälle erfüllt, so setzen wir
+\[
+ s := \min \{1 \leq i \leq r : a_i \in \{X_1, \ldots, X_n\}\}.
+\]
+und $1 \leq j \leq n$, so dass $a_s = X_j$. Wir betrachten den Ausdruck
+\[
+ a_1 \cdots a_s.
+\]
+Da $a_1, \ldots, a_{s-1} \in \{\del_1, \ldots, \del_n\}$ können wir
+\[
+ a_1 \cdots a_s = \del^\beta X_j
+\]
+mit $\beta = (\beta_1, \ldots, \beta_n) \in \N^n$ schreiben. Ist $\beta_j = 0$, so folgt aus $\del_i X_j = X_j \del_i$ für $i \neq j$ weiter, dass
+\[
+ a_1 \cdots a_r = = \del^\beta X_j a_{s+1} \cdots a_r = X_j \del^\beta a_{s+1} \cdots a_r.
+\]
+Damit befinden wir uns dann in einem der vorherigen Fälle.
+
+Ist $\beta_j \neq 0$, so bemerken wir, dass sich aus $\del_j X_j = X_j \del_j + 1$ induktiv ergibt, dass
+\[
+ \del_j^n X_j = X_j \del_j^n + n \del_j^{n-1} \text{ für alle } n \geq 1,
+\]
+denn für $n=1$ gilt die Aussage, und wenn die Aussage für $n$ gilt, so ist
+\begin{align*}
+ \del_j^{n+1} X_j
+ &= \del_j \left(\del_j^n X_j\right)
+ = \del_j \left(X_j\del_j^n + n\del_j^{n-1}\right)
+ = \del_j X_j \del_j^n + n \del_j^n \\
+ &= (X_j \del_j + 1) \del_j^n + n \del_j^n
+ = X_j \del_j^{n+1} + (n+1)\del_j^n.
+\end{align*}
+Da $\del_i X_j = X_j \del_i$ für $i \neq j$ ist daher
+\begin{align*}
+ a_1 \cdots a_s
+ =&\; \del^\beta X_j
+ =    \del_1^{\beta_1} \cdots \del_n^{\beta_n} X_j \\
+ =&\; \del_1^{\beta_1} \cdots \del_{j-1}^{\beta_{j-1}} \left( X_j \del_j^{\beta_j} + \beta_j \del_j^{\beta_j-1}\right) \del_{j+1}^{\beta_{j+1}} \cdots \del_n^{\beta_n} \\
+ =&\; X_j \del^\beta + \beta_j \del_1^{\beta_1} \cdots \del_{j-1}^{\beta_{j-1}} \del_{j}^{\beta_j-1} \del_{j+1}^{\beta_{j+1}} \cdots \del_n^{\beta_n} \\
+ =&\; X_j \del^\beta + \beta_j \del^{\beta'}
+\end{align*}
+mit
+\[
+ \beta' = (\beta_1, \ldots, \beta_{j-1}, \beta_j-1, \beta_{j+1}, \ldots, \beta_n)
+\]
+Daher ist
+\begin{align*}
+ a_1 \cdots a_r
+ &= \left( X_j \del^\beta + \beta_j \del^{\beta'} \right) a_{s+1} \cdots a_r \\
+ &= X_j \del^\beta a_{s+1} \cdots a_r + \beta_j \del^{\beta'} a_{s+1} \cdots a_r.
+\end{align*}
+Der erste Summand lässt sich nach einem der vorherigen Fälle als eine entsprechende $k$-Linearkombination schreiben, und der zweite nach Induktionsvoraussetzung.
+
+Damit haben wir gezeigt, dass die Elemente der Form $X^\alpha \del^\beta$ ein $k$-Erzeu\-gen\-den\-sys\-tem von $\mc{A}$ sind. Die Elemente sind auch linear unabhängig: Angenommen, es gebe $\lambda_1, \ldots, \lambda_r \in k \smallsetminus \{0\}$ und $\alpha^1, \ldots, \alpha^r, \beta^1, \ldots, \beta^r \in \N^n$, so dass $X^{\alpha^1} \del^{\beta^1}, \ldots, X^{\alpha^r} \del^{\beta^r}$ paarweise verschieden sind, mit 
+\[
+ \sum_{i=1}^r \lambda_i X^{\alpha^i} \del^{\beta^i} = 0.
+\]
+Sei dann $\beta^* \in \{\beta^1, \ldots, \beta^r\}$, so dass $|\beta^*|$ minimal ist. Wir betrachten das Polynom
+\[
+ p := x^{\beta^*} = x_1^{\beta^*_1} \cdots x_n^{\beta^*_n} \in k[x_1, \ldots, x_n].
+\]
+Wegen der Minimalität von $|\beta^*|$ muss für alle $\beta \in \{\beta^1, \ldots \beta^r\}$ entweder $\beta = \beta^*$ oder $\beta_i > \beta^*_i$ für ein $1 \leq i \leq n$, und damit $\del^\beta \cdot p = 0$. Für
+\[
+ I = \{1 \leq i \leq r : \beta^i = \beta^*\} \neq \emptyset
+\]
+muss also bereits
+\[
+ 0
+ = 0 \cdot p
+ = \sum_{i=1}^r \lambda_i X^{\alpha^i} \del^{\beta^i} \cdot p
+ = \sum_{i \in I} \lambda_i X^{\alpha^i} \del^{\beta^*} \cdot p,
+ = \sum_{i \in I} \lambda_i \beta^*! X^{\alpha^i},
+\]
+wobei wir die Notation $\beta^*! = \beta_1! \cdots \beta_n!$ verwenden. Da die Elemente $X^{\alpha^i} \del^{\beta^i}$ für $i \in I$ paarweise verschieden sind, aber $\beta_i = \beta^*$ für alle $i \in I$, müssen die Elemente $\alpha_i$ für $i \in I$ paarweise verschieden sein. Also sind die Elemente $X^{\alpha^i}$ mit $i \in I$ in $k[x_1, \ldots, x_n]$ linear unabhängig. Daher muss $\lambda_i \beta^*! = 0$ für alle $i \in I$, wegen $\kchar k \neq 0$ also $\lambda_i \neq 0$ für alle $i \in I$. Da $I \neq \emptyset$ ist das ein Widerspruch dazu, dass $\lambda_1, \ldots, \lambda_r \neq 0$.
+
+
+
+
 
 
 
