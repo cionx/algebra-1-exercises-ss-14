@@ -19,6 +19,100 @@
 
 
 
+\section{}
+
+
+\subsection{}
+Für $f,g : V \to k$ ist für alle $v \in V$
+\[
+ (fg)(v) = 0 \Leftrightarrow f(v)g(v) = 0 \Leftrightarrow f(v) = 0 \text{ oder } g(v) = 0.
+\]
+Insbesondere ist daher für alle $f,g \in \mc{P}(V)$
+\begin{align*}
+ \mc{V}(fg)
+ &= \{v \in V \mid (fg)(v) = 0\} \\
+ &= \{v \in V \mid f(v) = 0 \text{ oder } g(v) = 0\} \\
+ &= \{v \in V \mid f(v) = 0\} \cup \{v \in V \mid g(v) = 0\} \\
+ &= \mc{V}(f) \cup \mc{V}(g).
+\end{align*}
+
+
+\subsection{}
+Es ist
+\begin{align*}
+ F
+ &= \left(X^2 - 9\right)^2 + \left(Y^2 - 16\right)^2 + 2\left(X^2 + 9\right)\left(Y^2 - 16\right) \\
+ &= \left( \left(X^2 + 9\right) + \left(Y^2 - 16\right) \right)^2 - 36X^2 \\
+ &= \left(X^2 + 9 + Y^2 - 16 + 6X\right)(X^2 + 9 + Y^2 - 16 - 6X) \\
+ &= \left( (X+3)^2 + Y^2 - 16 \right) \left( (X-3)^2 + Y^2 - 16 \right).
+\end{align*}
+Es ist daher nach dem vorherigen Aufgabenteil
+\[
+ \mc{V}(F) = \mc{V}\left((X+3)^2 + Y^2 - 16\right) \cup \mc{V}\left((X-3)^2 + Y^2 - 16\right)
+\]
+die Vereinigung zweier Kreise, siehe Abbildung \ref{fig: Vereinigung zweier Kreise}.
+\begin{figure}\centering
+ \begin{tikzpicture}[scale = 0.6]
+  \draw[->, very thick, black] (-8.5,0) -- (8.5,0);
+  \draw[->, very thick, black] (0,-5.5) -- (0,5.5);
+  \foreach \x in {-8, -6, -4, -2, 2, 4, 6, 8}
+   \draw (\x, 0.2) -- (\x, -0.2) node[below] {$\x$};
+  \foreach \y in {-4, -2, 2, 4}
+   \draw (0.2, \y) -- (-0.2,\y) node[left] {$\y$};
+  \draw[thick] (-3,0) circle (4);
+  \draw[thick] (3,0) circle (4);
+ \end{tikzpicture}
+ \caption{$\mc{V}(F)$ aus Aufgabe 1 (b).}
+ \label{fig: Vereinigung zweier Kreise}
+\end{figure}
+
+
+\subsection{}
+Wir bemerken, dass
+\[
+ X^2 \left( 1 - X^2 \right) - Y^2
+ = -X^4 + X^2 - Y^2
+ = -\left( \left(X^2 - \frac{1}{2} \right)^2 + Y^2 - \frac{1}{4} \right).
+\]
+Definieren wir
+\[
+ f : \R^2 \to \R^2, (x,y) \mapsto \left(x^2,y\right),
+\]
+und den Kreis
+\[
+ K := \left\{ (x,y) \in \R^2 \,\middle|\, \left(x - \frac{1}{2} \right)^2 + y^2 - \frac{1}{4} = 0 \right\}
+\]
+so ist daher
+\begin{align*}
+ \mc{V}\left( X^2 \left( 1 - X^2 \right) - Y^2 \right)
+ &= \left\{ (x,y) \in \R^2 \,\middle|\, \left(x^2 - \frac{1}{2} \right)^2 + y^2 - \frac{1}{4} = 0 \right\} \\
+ &= f^{-1}(K).
+\end{align*}
+Es ergibt sich daher das Bild wie in Abbildung \ref{fig: lemis carte}
+\begin{figure}\centering
+ \begin{tikzpicture}[scale=1.5, domain=-1:1]
+  \draw[->, very thick, black] (-1.5,0) -- (1.5,0);
+  \draw[->, very thick, black] (0,-1.5) -- (0,1.5);
+  \foreach \x in {-1,1}
+   \draw (\x, 0.1) -- (\x, -0.1) node[below] {$\x$};
+  \foreach \y in {-1,1}
+   \draw (0.1, \y) -- (-0.1,\y) node[left] {$\y$};
+  \draw[thick,smooth,samples=1000] plot[id=oben] function {sqrt(x**2 - x**4)};
+  \draw[thick,smooth,samples=1000] plot[id=unten] function {-sqrt(x**2 - x**4)};
+ \end{tikzpicture}
+ \caption{$\mc{V}\left(X^2 \left( 1 - X^2 \right) - Y^2\right)$ aus Aufgabe 1 (c).}
+ \label{fig: lemis carte}
+\end{figure}
+
+
+
+
+
+
+
+
+
+
 
 
 
