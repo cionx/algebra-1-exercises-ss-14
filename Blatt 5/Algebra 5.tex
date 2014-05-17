@@ -108,6 +108,61 @@ Es ergibt sich daher das Bild wie in Abbildung \ref{fig: lemis carte}
 
 
 
+\section{}
+
+
+\subsection{}
+Es ist bekannt, dass $\varphi*$ ein $k$-Algebrahomorphismus ist. Daher ist $\varphi^*$ genau dann injektiv, wenn $\ker \varphi^* = 0$. Da für alle $f \in \mc{P}(V)$
+\begin{align*}
+ f \in \ker \varphi^*
+ &\Leftrightarrow \varphi^*(f) = 0 \\
+ &\Leftrightarrow f \circ \varphi = 0 \\
+ &\Leftrightarrow (f \circ \varphi)(w) = 0 \text{ für alle } w \in W \\
+ &\Leftrightarrow f(y) = 0 \text{ für alle } y \in \varphi(W)
+\end{align*}
+ist $\ker \varphi^* = 0$ genau dann, wenn
+\[
+ f_{|\varphi(W)} = 0 \Leftrightarrow f = 0.
+\]
+Diese Äquivalenz gilt genau dann, wenn $\varphi(W)$ Zariski-dicht in $V$ liegt.
+
+
+\subsection{}
+Wir bemerken zunächst, dass es für alle $w, w' \in W$ eine polynomielle Funktion $f \in \mc{P}(W)$ gibt mit $f(w) \neq f(w')$. Denn wählen wir eine Basis $w_1, \ldots, w_n$ von $W$ (möglich, da $W$ endlichdimensional ist), so können wir $w$ und $w'$ eindeutig als
+\[
+ w = \sum_{i=1}^n \lambda_i w_i \quad \text{und} \quad w' = \sum_{i=1}^n \lambda'_i w_i
+\]
+schreiben. Da $w \neq w'$ gibt es $1 \leq j \leq n$ mit $\lambda_j \neq \lambda'_j$. Für
+\[
+ \pi : W \to k, \sum_{i=1}^n \mu_i w_i \mapsto \mu_j
+\]
+ist offenbar $\pi \in \mc{P}(W)$, und da $\lambda_j \neq \lambda'_j$ ist $\pi(w) \neq \pi(w')$.
+
+Ist $\varphi$ nicht injektiv, so gibt es $w, w' \in W$ mit $\varphi(w) = \varphi(w')$. Da dann für alle $f \in \mc{P}(V)$
+\[
+ \varphi^*(f)(w) = f(\varphi(w)) = f(\varphi(w')) = \varphi^*(f)(w')
+\]
+ist $g(w) = g(w')$ für alle $g \in \Img \varphi^*$. Aus der obigen Beobachtung folgt damit, dass $\varphi^*$ nicht surjektiv ist.
+
+
+\subsection{}
+Wir betrachten die Abbildung
+\[
+ \varphi : \R \to \R, x \mapsto x^3.
+\]
+Diese ist offenbar polynomiell und bijektiv. Die induzierte Abbildung
+\[
+ \varphi^* : \mc{P}(\R) \to \mc{P}(\R), f \mapsto \left( x \mapsto f\left(x^3\right) \right)
+\]
+ist aber offenbar nicht surjektiv.
+
+
+
+
+
+
+
+
 
 
 
