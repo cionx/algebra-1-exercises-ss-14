@@ -167,21 +167,141 @@ Sei $f \in \mc{P}(V)$ mit $f_{|\varphi(X)} = 0$. Dann ist $f \circ \varphi = \va
 
 
 
+\section{}
+Wir definieren $\Xi : k^n \to M_n(k)$ durch
+\[
+ \Xi(a_1, \ldots, a_n) = 
+ \begin{pmatrix}
+  0 &        &        &   & a_n     \\
+  1 &      0 &        &   & a_{n-1} \\
+    & \ddots & \ddots &   & \vdots  \\
+    &        &      1 & 0 & a_2     \\
+    &        &        & 1 & a_1
+ \end{pmatrix}
+\]
+und setzen
+\[
+ Z := \left\{ \Xi(a_1, \ldots, a_n) \mid a_1, \ldots, a_n \in k \right\}.
+\]
+Insbesondere ist
+\begin{equation}\label{eq: X als Orbit von Z}  
+ X = \left\{ SAS^{-1} \,\middle|\, A \in Z, S \in \GL_n(k) \right\}.
+\end{equation}
 
 
+\addtocounter{subsection}{1}
+\subsection{}
+Angenommen, es ist $A \in X$. Dann gibt es $S \in \GL_n(k)$ und $a_1, \ldots, a_n \in k$ mit
+\[
+ A = S \Xi(a_1, \ldots, a_n) S^{-1}.
+\]
+Setzen wir $v = Se_1$, wobei $e_1, \ldots, e_n$ die Standardbasis von $k^n$ bezeichnet, so ergibt sich induktiv, dass $A^{k-1} v = S e_k$ für alle $1 \leq k \leq n$. Da $S \in \GL_n(k)$ und $e_1, \ldots, e_n$ eine Basis von $k^n$ ist, ist daher auch $v, Av, \ldots, A^{n-1}v$ eine Basis von $k^n$.
+
+Gibt es andererseits $v \in k^n$, so dass $v, Av, \ldots, A^{n-1}v$ linear unabhängig sind, so ist, da $\dim k^n = n$, dies bereits eine Basis von $k^n$. Schreiben wir
+\[
+ A^n v = \sum_{i=1}^n \lambda_i A^{i-1}v,
+\]
+so ist $A$ bezüglich der Basiswechselmatrix $S \in \GL_n(k)$, deren Spalten $v, \ldots, A^{n-1}v$ sind, von der Form
+\[
+ A = S \Xi(\lambda_n, \ldots, \lambda_1) S^{-1}.
+\]
+Also ist $A \in X$.
 
 
+\subsection{}
+Es ist klar, dass $h \in \mc{P}(M_n(k) \times k^n)$, und dass $h \neq 0$. Aus der Vorlesung ist bekannt, dass $Y$ deshalb Zariski-dicht in $M_n(k) \times k^n$ liegt.
+
+Die Projektion $\pi : M_n(k) \times k^n \to M_n(k)$ ist linear und deshalb insbesondere polynomiell. Deshalb liegt, wie aus Aufgabe 3 bekannt, $\pi(Y)$ Zariski-dicht in $\pi(M_n(k) \times k^n) = M_n(k)$.
+
+Dabei ist für alle $A \in M_n(k)$ genau dann $A \in \pi(Y)$, wenn es ein $v \in k^n$ gibt, so dass $\det(v, A_v, \ldots, A^{n-1}v) \neq 0$, also $v, Av, \ldots, A^{n-1}v$ linear unabhängin sind. Daher ist $\pi(Y) = X$ nach Aufgabenteil (b).
 
 
+\subsection{}
+Zunächst zeigen wir per Induktion über $n \geq 1$, dass für alle $a_1, \ldots, a_n \in k$
+\[
+ P_{\Xi(a_1, \ldots, a_n)}(t) = t^n - \sum_{i=1}^n a_t t^{n-i}.
+\]
+
+Für $n=1$ ist die Aussage klar. Sei daher $n \geq 2$ und es gelte die Aussage für $n-1$. Entwicklung nach der ersten Zeile ergibt dann
+\begin{align*}
+  &\, P_{\Xi(a_1, \ldots, a_n)}(t)
+ = \det
+ \begin{pmatrix}
+   t &        &        &    &  -a_n     \\
+  -1 &      t &        &    &  -a_{n-1} \\
+     & \ddots & \ddots &    &   \vdots  \\
+     &        &     -1 &  t &  -a_2     \\
+     &        &        & -1 & t-a_1
+ \end{pmatrix} \\
+ =&\, t
+  \begin{pmatrix}
+   t &        &        &    &  -a_{n-1} \\
+  -1 &      t &        &    &  -a_{n-2} \\
+     & \ddots & \ddots &    &   \vdots  \\
+     &        &     -1 &  t &  -a_2     \\
+     &        &        & -1 & t-a_1
+ \end{pmatrix}
+ - (-1)^{n-1} a_n
+ \underbrace{\begin{pmatrix}
+  -1 &  t &        &        &    \\
+     & -1 & t      &        &    \\
+     &    & \ddots & \ddots &    \\
+     &    &        &     -1 &  t \\
+     &    &        &        & -1
+ \end{pmatrix}}_{\in M_{n-1}(k)} \\
+ =&\, t P_{\Xi(a_1, \ldots, a_{n-1})}(t) - a_n
+ \underset{\text{IV}}= t\left( t^{n-1} - \sum_{i=1}^{n-1} a_i t^{n-1-i} \right) - a_n \\
+ =&\, t^n - \sum_{i=1}^{n-1} a_i t^{n-i} - a_n
+ = t^n - \sum_{i=1}^n a_i t^{n-i}.
+\end{align*}
+
+Setzen wir $A := \Xi(a_1, \ldots, a_n)$ für $a_1, \ldots, a_n \in k$, so ist
+\[
+ t^n - \sum_{i=1}^n a_i t^{n-i} = P_A(t) = t^n + \sum_{i=1}^n (-1)^i s_i(A) t^{n-i},
+\]
+und durch Koeffizientenvergleich ergibt sich, dass
+\[
+ a_i = (-1)^{n+i} s_i(A) \text{ für alle } 1 \leq i \leq n.
+\]
 
 
-
-
-
-
-
-
-
+\subsection{}
+Sei $f \in \mc{P}(M_n(k))^{\GL_n(k)}$. Da $f \in \mc{P}(M_n(k))$ gibt es $\tilde{p} \in k[X_{11}, \ldots, X_{nn}]$, so dass $f$ bezüglich der Basis $(E_{ij})_{1 \leq i,j \leq n}$ von $M_n(k)$ die Form
+\[
+ f\left( \sum_{i,j=1}^n a_{ij} E_{ij} \right) = \tilde{p}(a_{11}, \ldots, a_{nn}) \text{ für alle } (a_{ij})_{1 \leq i,j \leq n} \in M_n(k)
+\]
+hat. Insbesondere gibt es daher $p' \in k[X_1, \ldots, X_n]$, so dass
+\[
+ f\left( \Xi(a_1, \ldots, a_n) \right) = p'(a_1, \ldots, a_n) \text{ für alle } a_1, \ldots, a_n \in k..
+\]
+Für alle $A = \Xi(a_1, \ldots, a_n) \in Z$ ist
+\[
+ a_i = (-1)^{i+1} s_i(A)
+\]
+und daher
+\[
+ f(A) = p'(a_1, \ldots, a_n) = p'\left(s_1, -s_2, \ldots, (-1)^{n+1} s_n\right)(A).
+\]
+Für $p \in k[X_1, \ldots, X_n]$ mit
+\[
+ p(X_1, \ldots, X_n) = p'(X_1, -X_2, X_3, \ldots, (-1)^{n+1} X_n)
+\]
+ist daher
+\[
+ f(A) = p(s_1, \ldots, s_n)(A) \text{ für alle } A \in Z.
+\]
+Da $f$ und $p(s_1, \ldots, s_n)$ invariant unter der Konjugationswirkung von $\GL_n(k)$ sind, ist wegen \eqref{eq: X als Orbit von Z} auch
+\[
+ f(A) = p(s_1, \ldots, s_n)(A) \text{ für alle } A \in X.
+\]
+Da $X$ Zariski-dicht in $M_n(k)$ liegt, ist daher bereits
+\[
+ f(A) = p(s_1, \ldots, s_n)(A) \text{ für alle } A \in M_n(k).
+\]
+Also ist
+\[
+ f = p(s_1, \ldots, s_n) \in k[s_1, \ldots, s_n].
+\]
 
 
 
