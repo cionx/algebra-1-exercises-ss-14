@@ -52,7 +52,7 @@ Es ist daher nach dem vorherigen Aufgabenteil
 \]
 die Vereinigung zweier Kreise, siehe Abbildung \ref{fig: Vereinigung zweier Kreise}.
 \begin{figure}\centering
- \begin{tikzpicture}[scale = 0.6]
+ \begin{tikzpicture}[scale = 0.4]
   \draw[->, very thick, black] (-8.5,0) -- (8.5,0);
   \draw[->, very thick, black] (0,-5.5) -- (0,5.5);
   \foreach \x in {-8, -6, -4, -2, 2, 4, 6, 8}
@@ -90,9 +90,9 @@ so ist daher
 \end{align*}
 Es ergibt sich daher das Bild wie in Abbildung \ref{fig: lemis carte}
 \begin{figure}\centering
- \begin{tikzpicture}[scale=1.5, domain=-1:1]
-  \draw[->, very thick, black] (-1.5,0) -- (1.5,0);
-  \draw[->, very thick, black] (0,-1.5) -- (0,1.5);
+ \begin{tikzpicture}[scale=1.8, domain=-1:1]
+  \draw[->, very thick, black] (-1.2,0) -- (1.2,0);
+  \draw[->, very thick, black] (0,-1.2) -- (0,1.2);
   \foreach \x in {-1,1}
    \draw (\x, 0.1) -- (\x, -0.1) node[below] {$\x$};
   \foreach \y in {-1,1}
@@ -112,7 +112,11 @@ Es ergibt sich daher das Bild wie in Abbildung \ref{fig: lemis carte}
 
 
 \subsection{}
-Es ist bekannt, dass $\varphi*$ ein $k$-Algebrahomorphismus ist. Daher ist $\varphi^*$ genau dann injektiv, wenn $\ker \varphi^* = 0$. Da für alle $f \in \mc{P}(V)$
+Da $\varphi^*$ ein $k$-Algebrahomomorphismus ist, ist $\varphi^*$ genau dann injektiv, wenn
+\[
+ \ker \varphi^* = 0.
+\]
+Da für alle $f \in \mc{P}(V)$
 \begin{align*}
  f \in \ker \varphi^*
  &\Leftrightarrow \varphi^*(f) = 0 \\
@@ -122,17 +126,17 @@ Es ist bekannt, dass $\varphi*$ ein $k$-Algebrahomorphismus ist. Daher ist $\var
 \end{align*}
 ist $\ker \varphi^* = 0$ genau dann, wenn
 \[
- f_{|\varphi(W)} = 0 \Leftrightarrow f = 0.
+ f_{|\varphi(W)} = 0 \Leftrightarrow f = 0 \quad \text{für alle } f \in \mc{P}(V).
 \]
 Diese Äquivalenz gilt genau dann, wenn $\varphi(W)$ Zariski-dicht in $V$ liegt.
 
 
 \subsection{}
-Wir bemerken zunächst, dass es für alle $w, w' \in W$ eine polynomielle Funktion $f \in \mc{P}(W)$ gibt mit $f(w) \neq f(w')$. Denn wählen wir eine Basis $w_1, \ldots, w_n$ von $W$ (möglich, da $W$ endlichdimensional ist), so können wir $w$ und $w'$ eindeutig als
+Wir bemerken zunächst, dass es für alle $w, w' \in W$ mit $w \neq w'$ eine polynomielle Funktion $f \in \mc{P}(W)$ mit $f(w) \neq f(w')$ gibt. Denn wählen wir eine Basis $\{w_1, \ldots, w_n\}$ von $W$ (möglich, da $W$ endlichdimensional ist), so können wir $w$ und $w'$ eindeutig als
 \[
  w = \sum_{i=1}^n \lambda_i w_i \quad \text{und} \quad w' = \sum_{i=1}^n \lambda'_i w_i
 \]
-schreiben. Da $w \neq w'$ gibt es $1 \leq j \leq n$ mit $\lambda_j \neq \lambda'_j$. Für
+schreiben. Da $w \neq w'$ ist $\lambda_j \neq \lambda'_j$ für ein $1 \leq j \leq n$. Für
 \[
  \pi : W \to k, \sum_{i=1}^n \mu_i w_i \mapsto \mu_j
 \]
@@ -142,15 +146,15 @@ Ist $\varphi$ nicht injektiv, so gibt es $w, w' \in W$ mit $\varphi(w) = \varphi
 \[
  \varphi^*(f)(w) = f(\varphi(w)) = f(\varphi(w')) = \varphi^*(f)(w')
 \]
-ist $g(w) = g(w')$ für alle $g \in \Img \varphi^*$. Aus der obigen Beobachtung folgt damit, dass $\varphi^*$ nicht surjektiv ist.
+ist $g(w) = g(w')$ für alle $g \in \Img \varphi^*$. Wegen der obigen Beobachtung kann $\varphi^*$ deshalb nicht surjektiv ist.
 
 
 \subsection{}
-Wir betrachten die Abbildung
+Die Abbildung
 \[
  \varphi : \R \to \R, x \mapsto x^3.
 \]
-Diese ist offenbar polynomiell und bijektiv. Die induzierte Abbildung
+ist offenbar polynomiell und bijektiv, die induzierte Abbildung
 \[
  \varphi^* : \mc{P}(\R) \to \mc{P}(\R), f \mapsto \left( x \mapsto f\left(x^3\right) \right)
 \]
@@ -195,7 +199,7 @@ Angenommen, es ist $A \in X$. Dann gibt es $S \in \GL_n(k)$ und $a_1, \ldots, a_
 \[
  A = S \Xi(a_1, \ldots, a_n) S^{-1}.
 \]
-Setzen wir $v = Se_1$, wobei $e_1, \ldots, e_n$ die Standardbasis von $k^n$ bezeichnet, so ergibt sich induktiv, dass $A^{k-1} v = S e_k$ für alle $1 \leq k \leq n$. Da $S \in \GL_n(k)$ und $e_1, \ldots, e_n$ eine Basis von $k^n$ ist, ist daher auch $v, Av, \ldots, A^{n-1}v$ eine Basis von $k^n$.
+Setzen wir $v = Se_1$, wobei $\{e_1, \ldots, e_n\}$ die Standardbasis von $k^n$ bezeichnet, so ergibt sich induktiv, dass $A^{k-1} v = S e_k$ für alle $1 \leq k \leq n$. Da $S \in \GL_n(k)$ und $\{e_1, \ldots, e_n\}$ eine Basis von $k^n$ ist, ist auch $\left\{v, Av, \ldots, A^{n-1}v\right\}$ eine Basis von $k^n$.
 
 Gibt es andererseits $v \in k^n$, so dass $v, Av, \ldots, A^{n-1}v$ linear unabhängig sind, so ist, da $\dim k^n = n$, dies bereits eine Basis von $k^n$. Schreiben wir
 \[
@@ -213,7 +217,7 @@ Es ist klar, dass $h \in \mc{P}(M_n(k) \times k^n)$, und dass $h \neq 0$. Aus de
 
 Die Projektion $\pi : M_n(k) \times k^n \to M_n(k)$ ist linear und deshalb insbesondere polynomiell. Deshalb liegt, wie aus Aufgabe 3 bekannt, $\pi(Y)$ Zariski-dicht in $\pi(M_n(k) \times k^n) = M_n(k)$.
 
-Dabei ist für alle $A \in M_n(k)$ genau dann $A \in \pi(Y)$, wenn es ein $v \in k^n$ gibt, so dass $\det(v, A_v, \ldots, A^{n-1}v) \neq 0$, also $v, Av, \ldots, A^{n-1}v$ linear unabhängin sind. Daher ist $\pi(Y) = X$ nach Aufgabenteil (b).
+Dabei ist für alle $A \in M_n(k)$ genau dann $A \in \pi(Y)$, wenn es ein $v \in k^n$ gibt, so dass $\det(v, A_v, \ldots, A^{n-1}v) \neq 0$, also $v, Av, \ldots, A^{n-1}v$ linear unabhängig sind. Daher ist $\pi(Y) = X$ nach Aufgabenteil (b).
 
 
 \subsection{}
@@ -266,7 +270,7 @@ und durch Koeffizientenvergleich ergibt sich, dass
 
 
 \subsection{}
-Sei $f \in \mc{P}(M_n(k))^{\GL_n(k)}$. Da $f \in \mc{P}(M_n(k))$ gibt es $\tilde{p} \in k[X_{11}, \ldots, X_{nn}]$, so dass $f$ bezüglich der Basis $(E_{ij})_{1 \leq i,j \leq n}$ von $M_n(k)$ die Form
+Sei $f \in \mc{P}(M_n(k))^{\GL_n(k)}$. Da $f \in \mc{P}(M_n(k))$ gibt es $\tilde{p} \in k[X_{11}, \ldots, X_{nn}]$, so dass $f$ bezüglich der Basis $\{E_{ij}\}_{1 \leq i,j \leq n}$ von $M_n(k)$ die Form
 \[
  f\left( \sum_{i,j=1}^n a_{ij} E_{ij} \right) = \tilde{p}(a_{11}, \ldots, a_{nn}) \text{ für alle } (a_{ij})_{1 \leq i,j \leq n} \in M_n(k)
 \]
@@ -301,6 +305,11 @@ Da $X$ Zariski-dicht in $M_n(k)$ liegt, ist daher bereits
 Also ist
 \[
  f = p(s_1, \ldots, s_n) \in k[s_1, \ldots, s_n].
+\]
+
+Das zeigt, dass $\mc{P}(M_n(k))^{\GL_n(k)} \subseteq k[s_1, \ldots, s_n]$. Die Umkehrung ist klar. Also ist
+\[
+ \mc{P}(M_n(k))^{\GL_n(k)} = k[s_1, \ldots, s_n].
 \]
 
 
