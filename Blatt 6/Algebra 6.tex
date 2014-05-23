@@ -19,22 +19,138 @@
 
 
 
-\section{}
-$X \subseteq W$ ist genau dann die Verschwindungsmenge einer Menge von Polynomen $\mf{a} \in \mc{P}(V)$, wenn $f(x) = 0$ für alle $f \in \mf{a}, x \in X$ und es für jedes $y \in W \smallsetminus X$ ein $f \in \mf{a}$ gibt, so dass $f(y) \neq 0$. Für alle $y \in W \smallsetminus X$ ist dann $f$ nicht Zarisksi-dicht in $X \cup \{y\}$.
+\addtocounter{section}{1}
+\section*{Aufgabe 1 und Aufgabe 4}
+Im Folgenden sei $k$ ein (nicht notwendigerweise unendlicher) Körper und $V$ ein endlichdimensionaler $k$-Vektorraum.
 
-Ist $X$ für alle $y \in W \smallsetminus X$ nicht Zariski-dicht in $X \cup \{y\}$, so ist $X$ in keiner echt größeren Teilmenge von $W$ Zariski-dicht, denn ist $X \subsetneq Y \subseteq W$ und $X$ Zariski-dicht in $Y$, so ist $X$ auch Zariski-dicht in $X \cup \{y\}$ für alle $y \in Y \smallsetminus X$.
+Es sei $X \subseteq V$ eine Teilmenge. Wir wolllen untersuchen, in welchen Teilmengen von $V$ $X$ Zariski-dicht liegt, und wie sich Zariski-Dichtheit charakterisieren lässt.
 
-Ist $X$ in keiner echt größeren Teilmenge von $W$ Zariski-dicht, so betrachten wir
+Hierfür bemerken wir, dass die Teilmengen von $V$, in denen $X$ Zariski-dicht liegt, unter Vereinigungen abgeschlossen sind: Ist $(U_i)_{i \in I}$ eine nichtleere Kollektion von Teilmengen mit $X \subseteq U_i \subseteq V$ für alle $i \in I$, so dass $X$ für alle $i \in I$ Zariski-dicht in $U_i$ liegt, so liegt $X$ auch Zariski-dicht in
 \[
- \mf{a} := \mc{I}(X) = \{f \in \mc{P}(V) \mid f(x) = 0 \text{ für alle } x \in X\}.
+ U := \bigcup_{i \in I} U_i.
 \]
-Es ist klar, dass $X \subseteq \mc{V}(\mf{a})$, und da für alle $f \in \mc{P}(V)$
+Denn da $I \neq \emptyset$ ist $X \subseteq U \subseteq V$, und für $f \in \mc{P}(V)$ mit $f_{|X} = 0$ ist $f_{|U_i} = 0$ für alle $i \in I$, also auch $f_{|U} = 0$.
+
+Diese Beobachtung motiviert die folgende Definition:
+
+\begin{defi}
+ Für $X \subseteq V$ ist
+ \[
+  Z(X) := \bigcup \left\{ Y \mid X \subseteq Y \subseteq V \text{ und $X$ liegt Zariksi-dicht in $Y$} \right\}
+ \]
+ der Zariski-Abschluss von $X$. $X$ heißt Zariksi-abgeschlossen, wenn $Z(X) = X$.
+\end{defi}
+
+
+Mithilfe des Zariski-Abschlusses können wir nun den Begriff der Zariski-Dichtheit umformulieren.
+
+
+\begin{lem}\label{lem: erste Aussagen über Zariski-Abschluss}
+ Sei $X \subseteq V$.
+ \begin{enumerate}[a)]
+  \item
+  $X$ liegt genau dann Zariski-dicht in einer Teilmenge $Y \subseteq V$, wenn $X \subseteq Y \subseteq Z(X)$. Inbesondere ist $Z(X)$ die größte Teilmenge von $V$, in der $Z(X)$ Zariski-dicht liegt.
+  \item
+  $X$ ist genau dann Zariski-abgeschlossen, wenn $X$ in keiner echt größeren Teilmenge von $V$ Zariski-dicht liegt.
+  \item
+  $Z(X)$ ist die kleinste Zariski-abgeschlossene Menge, die $X$ enthält. 
+ \end{enumerate}
+\end{lem}
+\begin{proof}
+ \begin{enumerate}[a)]
+  \item
+  Liegt $X$ Zariski-dicht in $Y \subseteq V$, so ist $Y \subseteq Z(X)$ nach der Definition von $Z(X)$. Da die Mengen, in denen $X$ Zariski-dicht liegt, unter Vereinigung abgeschlossen sind, ist $X$ Zariski-dicht in $Z(X)$, und damit ist auch in jeder Teilmenge $Y \subseteq Z(X)$ mit $X \subseteq Y$.
+  \item
+  Ist $X$ Zariski-abgeschlossen, so git für jede Teilmenge $Y \subseteq V$, in der $X$ Zariski-dicht liegt, dass $Y \subseteq Z(X) = X$ und somit $Y = X$. Liegt $X$ in keiner echt größeren Teilmenge von $V$ Zariski-dicht, so ist
+  \[
+   \left\{ Y \mid X \subseteq Y \subseteq V \text{ und $X$ liegt Zariksi-dicht in $Y$} \right\} = \{X\} 
+  \]
+  und somit $Z(X) = X$.
+  \item
+  $Z(X)$ ist Zariski-abgeschlossen, denn liegt $Z(X)$ Zariski-dicht in $Y \subseteq V$, so liegt auch $X$ Zariski-dicht in $Y$, weshalb $Y \subseteq Z(X)$ und somit $Y = Z(X)$. Für eine Zariski-abgeschlossene Teilmenge $Y \subseteq V$ mit $X \subseteq Y \subseteq Z(X)$ ist, da $X$ Zariski-dicht in $Z(X)$ liegt, auch $Y$ Zariski-dicht in $Z(X)$. Da $Y$  Zariski-abgeschlossen ist, ist $Z(X) = Y$. \qedhere
+ \end{enumerate}
+\end{proof}
+
+
+Für Teilmengen $X \subseteq Y \subseteq V$ ist $X$ genau dann Zariksi-dicht in $Y$, wenn für jede Funktion $f \in \mc{P}(V)$ die Einschränkung $f_{|Y}$ bereits eindeutig durch $f_{|X}$ bestimmt ist. Dies legt die Vermutung nahe, dass sich Zariski-Abschluss und Zariski-Abgeschlossenheit von $X \subseteq V$ mithilfe von Mengen an Polynomfunktionen formulieren lassen.
+
+
+\begin{lem}\label{lem: Charakterisierung durch Verschwindungsmengen}
+ Sei $X \subseteq V$. Dann ist
+ \[
+  Z(X) = \mc{V}( \mc{I}(X) ),
+ \]
+ und  $X$ ist genau dann Zariski-abgeschlossen, wenn
+ \[
+  X = \mc{V}(\mf{a}).
+ \]
+ für eine Teilmenge $\mf{a} \subseteq \mc{P}(V)$.
+\end{lem}
+\begin{proof}
+ Sei $\mf{a} \subseteq \mc{P}(V)$. Sei $Y \subseteq V$, so dass $\mc{V}(\mf{a})$ Zariski-dicht in $Y$ liegt. Für alle $f \in \mf{a}$ ist $f_{|\mc{V}(\mf{a})} = 0$, also auch $f_{|Y} = 0$. Daher ist $Y \subseteq \mc{V}(\mf{a})$. Nach Lemma \ref{lem: erste Aussagen über Zariski-Abschluss} ist $\mc{V}(\mf{a})$ daher Zariski-abgeschlossen.
+ 
+ $X$ ist Zariski-dicht in $\mc{V}(\mc{I}(X))$, denn es ist $X \subseteq \mc{V}(\mc{I}(X))$ für alle $f \in \mc{P}(V)$ ist
+ \[
+  f_{|X} = 0 \Rightarrow f \in \mc{I}(X) \Rightarrow f_{|\mc{V}(\mc{I}(X))} = 0
+ \]
+ weshalb nach Lemma \ref{lem: erste Aussagen über Zariski-Abschluss}
+ \[
+  X \subseteq \mc{V}(\mc{I}(X)) \subseteq Z(X).
+ \]
+ Da $\mc{V}(\mc{I}(X))$ Zariski-abgeschlossen ist, ist $\mc{V}(\mc{I}(X)) \supseteq Z(X)$. Also ist
+ \[
+  Z(X) = \mc{V}(\mc{I}(X)).
+ \]
+ Insbesondere ist $X$ genau dann Zariski-abgeschlossen, wenn
+ \[
+  X = \mc{V}(\mc{I}(X)).
+ \]
+\end{proof}
+
+
+Wie der Begriff der Zariski-Abgeschlossenheit bereits nahelegt, lassen sich die bisherigen Beobachtungen auch topologisch formulieren. 
+
+
+\begin{lem}
+ Die Zariski-abgeschlossenen Teilmengen von $V$ definieren eine Topologie auf $V$, in der die abgeschlossenen Mengen genau die Zariski-abgeschlossenen Mengen sind.
+\end{lem}
+\begin{proof}
+ $\emptyset = \mc{V}(\{1\})$ und $V = \mc{V}(\{0\})$ sind Zariski-abgeschlossen. Für eine Familien $(A_i)_{i \in I}$ von Zariski-abgeschlossenen Mengen ist nach Lemma \ref{lem: Charakterisierung durch Verschwindungsmengen} auch $\bigcap_{i \in I} A_i$ Zariski-ab\-ge\-schlos\-sen, da
+ \begin{align*}
+  \bigcap_{i \in I} A_i
+  = \bigcap_{i \in I} \mc{V}(\mc{I}(A_i))
+  = \mc{V}\left( \bigcup_{i \in I} \mc{I}(A_i) \right).
+ \end{align*}
+ 
+ Sind $A, B \subseteq V$ Zariski-abgeschlossen, so ist auch $A \cup B$ Zariski-ab\-ge\-schlos\-sen: Ist $A \cup B = V$ so ist nichts zu zeigen. Ansonsten sei $y \in V \smallsetminus (A \cup B)$ beliebig aber fest. Da $A$ Zariski-abgeschlossen ist, ist $A$ nach Lemma \ref{lem: erste Aussagen über Zariski-Abschluss} nicht Zariski-dicht in $A \cup \{y\}$. Es gibt deshalb ein $f \in \mc{P}(V)$ mit
 \[
- f_{|X} = 0
- \Rightarrow f \in \mf{a}
- \Rightarrow f_{|\mc{V}(\mf{a})} = 0
+ f_{|A} = 0 \quad \text{und} \quad f(y) \neq 0
 \]
-liegt $X$ Zariski-dicht in $\mc{V}(\mf{a})$. Nach Annahme ist deshalb $X = \mc{V}(\mf{a})$.
+Analog gibt es $g \in \mc{P}(V)$ mit
+\[
+ g_{|B} = 0 \quad \text{und} \quad g(y) \neq 0
+\]
+Es ist daher $fg \in \mc{P}(V)$ mit
+\[
+ (fg)_{|A \cup B} = 0 \quad \text{und} \quad (fg)(y) \neq 0
+\]
+Also ist $A \cup B$ nicht Zariski-dicht in $A \cup B \cup \{y\}$. Wegen der Beliebigkeit von \mbox{$y \in V \smallsetminus (A \cup B)$} zeigt dies, dass $A \cup B$ in keiner echt größeren Teilmenge von $V$ Zariski-dicht liegt, weshalb $A \cup B$ nach Lemma \ref{lem: erste Aussagen über Zariski-Abschluss} Zariski-abgeschlossen ist.
+
+Damit ergibt sich nun induktiv, dass für alle Zariski-abgeschlossenen Mengen $A_1, \ldots, A_n \subseteq V$ auch $A_1 \cup \ldots \cup A_n$ Zariski-abgeschlossen ist.
+\end{proof}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
