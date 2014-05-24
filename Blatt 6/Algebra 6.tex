@@ -166,6 +166,102 @@ Das zeigt, dass $\det \not\in k[\tr, \tr_2]$. Also wird $\mc{P}(M_2(k))^{\GL_2(k
 
 
 
+\section{}
+
+
+\subsection{}
+Es sei
+\[
+ b_1 := p_2 - p_1 \neq 0
+\]
+und $b_2 \in V$, so dass $\{b_1, b_2\}$ eine $k$-Basis von $V$ ist. Ist
+\begin{gather*}
+ p_1 = \lambda_1 b_1 + \lambda_2 b_2,
+\shortintertext{so ist}
+ p_2 = (\lambda_1+1) b_1 + \lambda_2 b_2.
+\end{gather*}
+Für die Koordinatentransformationen
+\[
+ \psi_i : V \to k, \mu_1 b_1 + \mu_2 b_2 \mapsto \mu_i \qquad \text{für } i = 0, 1,
+\]
+so ist, wie aus der Vorlesung bekannt,
+\begin{align*}
+ \mc{P}(V)(\{p_1\}) &= \left( \psi_1 - \lambda_1, \psi_2 - \lambda_2 \right) \text{ und} \\
+ \mc{P}(V)(\{p_2\}) &= \left( \psi_1 - \lambda_1-1, \psi_2 - \lambda_2 \right).
+\end{align*}
+Es ist klar, dass
+\[
+ \mc{I}(\{p_1, p_2\})
+ = \mc{I}(\{p_1\}) \cap \mc{I}(\{p_2\})
+ \supseteq \mc{I}(\{p_1\}) \cdot \mc{I}(\{p_2\}).
+\]
+Sei $f \in \mc{I}(\{p_1, p_2\})$ beliebig aber fest. Da $f \in \mc{I}(\{p_1\})$, also
+\[
+ f \in \left( \psi_1 - \lambda_1, \psi_2 - \lambda_2 \right),
+\]
+gibt es $r_1, r_2 \in \mc{P}(V)$ mit
+\[
+ f = r_1 (\psi_1 - \lambda_1) + r_2(\psi_2 - \lambda_2).
+\]
+Da auch $f \in \mc{I}(\{p_2\})$ ist
+\[
+ 0 = f(p_2) = r_1(p_2) (\lambda_1 + 1 - \lambda_1) + r_2(p_2) (\lambda_2 - \lambda_2) = r_1(p_2).
+\]
+Daher ist $r_1 \in \mc{I}(\{p_2\})$. Es gibt also $s_1, s_2 \in \mc{P}(V)$ mit
+\[
+ r_1 = s_1 (\psi_1 - \lambda_1 - 1) + s_2 (\psi_2 - \lambda_2).
+\]
+Daher ist
+\begin{align*}
+ f
+ &= s_1(\psi_1 - \lambda_1)(\psi_1 - \lambda_1 - 1) + s_2(\psi_1 - \lambda_1)(\psi_2 - \lambda_2) + r_2(\psi_2 - \lambda_2) \\
+ &= s_1(\psi_1 - \lambda_1)(\psi_1 - \lambda_1 - 1) + \left( s_2(\psi_1 - \lambda_1) + r_2\right)(\psi_2 - \lambda_2)
+\end{align*}
+Da
+\begin{align*}
+  &\, \mc{I}(\{p_1\}) \cdot \mc{I}(\{p_2\}) \\
+ =&\, \left( \psi_1 - \lambda_1, \psi_2 - \lambda_2 \right) \cdot \left( \psi_1 - \lambda_1-1, \psi_2 - \lambda_2 \right) \\
+ =&\, ( (\psi_1-\lambda_1)(\psi_1-\lambda_1-1), (\psi_2-\lambda_2)(\psi_1-\lambda_1-1), \\
+  &\, (\psi_1-\lambda_1)(\psi_2-\lambda_2), (\psi_2-\lambda_2)^2 ) \\
+ =&\, \left( (\psi_1-\lambda_1)(\psi_1-\lambda_1-1), (\psi_2-\lambda_2) \right)
+\end{align*}
+ist $f \in \mc{I}(\{p_1\}) \cdot \mc{I}(\{p_2\})$. Wegen der Beliebigkeit von $f \in \mc{I}(\{p_1, p_2\})$ folgt, dass
+\[
+ \mc{I}(\{p_1, p_2\}) = \mc{I}(\{p_1\}) \cdot \mc{I}(\{p_2\}).
+\]
+
+
+\subsection{}
+Es sei $k$ ein beliebiger Körper, $V = k$ und $X = Y = \{0\}$. Dann ist
+\[
+ \mc{I}(X \cup Y) = \mc{I}(\{0\}) = (x) \subseteq \mc{P}(V),
+\]
+wobei $x : k \to k, \lambda \mapsto \lambda$. Daher ist
+\[
+ \mc{I}(X) \cdot \mc{I}(Y) = (x) \cdot (x) = (x \cdot x) = \left(x^2\right) \neq (x) = \mc{I}(X \cup Y).
+\]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
