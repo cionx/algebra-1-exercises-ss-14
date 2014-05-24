@@ -140,15 +140,27 @@ Daraus ergibt sich induktiv, dass $A_1 \cup \ldots \cup A_n$ für alle Zariski-a
 \end{proof}
 
 
-
-
-
-
-
-
-
-
-
+\section{}
+Für alle
+\begin{gather*}
+ A = \vect{a & b \\ c & d} \in M_2(k)
+\shortintertext{ist}
+ A^2 = \vect{a^2 + bc & ab + bd \\ ac + cd & bc + d^2},
+\shortintertext{also}
+ \tr(A) = a+d \text{ und }
+ \tr_2(A) = a^2 + d^2.
+\end{gather*}
+Für $I,J \subseteq M_2(k)$ mit
+\begin{gather*}
+ I := \vect{1 & 0 \\ 0 & 1} \text{ und } J := \vect{1 & 1 \\ 1 & 1}
+\shortintertext{ist also}
+ \tr(I) = \tr(J) = \tr_2(I) = \tr_2(J) = 0.
+\end{gather*}
+ Deshalb ist $f(I) = f(J)$ für alle $f \in k[\tr,\tr_2]$. Für $\det \in \mc{P}(M_2(k))^{\GL_2(k)}$ ist jedoch
+\[
+ \det(I) = 1 \neq 0 = \det(J).
+\]
+Das zeigt, dass $\det \not\in k[\tr, \tr_2]$. Also wird $\mc{P}(M_2(k))^{\GL_2(k)}$ nicht von $\tr, \tr_2$ erzeugt.
 
 
 
