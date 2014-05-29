@@ -21,13 +21,13 @@
 
 \addtocounter{section}{1}
 \section*{Aufgabe 1 und Aufgabe 4}
-Im Folgenden sei $k$ ein (nicht notwendigerweise unendlicher) Körper und $V$ ein endlichdimensionaler $k$-Vektorraum. Für Teilmengen $X \subseteq V$ wollen wir untersuchen, in welchen Teilmengen von $V$ $X$ Zariski-dicht liegt, und wie sich Zariski-Dichtheit charakterisieren lässt.
+Im Folgenden sei $k$ ein (nicht notwendigerweise unendlicher) Körper und $V$ ein endlichdimensionaler $k$-Vektorraum. Für $X \subseteq V$ wollen wir untersuchen, in welchen Teilmengen von $V$ $X$ Zariski-dicht liegt, und wie sich Zariski-Dichtheit charakterisieren lässt.
 
 Hierfür bemerken wir, dass die Teilmengen von $V$, in denen $X$ Zariski-dicht liegt, unter Vereinigung abgeschlossen sind: Ist $(U_i)_{i \in I}$ eine nichtleere Kollektion von Mengen mit $X \subseteq U_i \subseteq V$ für alle $i \in I$, so dass $X$ für alle $i \in I$ Zariski-dicht in $U_i$ liegt, so liegt $X$ auch Zariski-dicht in
 \[
  U := \bigcup_{i \in I} U_i.
 \]
-Denn es ist $I \neq \emptyset$ und deshalb $X \subseteq U \subseteq V$, und für $f \in \mc{P}(V)$ mit $f_{|X} = 0$ ist $f_{|U_i} = 0$ für alle $i \in I$, also auch $f_{|U} = 0$.
+Denn es ist $I \neq \emptyset$, und deshalb $X \subseteq U \subseteq V$, und für $f \in \mc{P}(V)$ mit $f_{|X} = 0$ ist $f_{|U_i} = 0$ für alle $i \in I$, also auch $f_{|U} = 0$.
 
 Diese Beobachtung motiviert die folgende Definition:
 
@@ -57,7 +57,7 @@ Mithilfe des Zariski-Abschlusses können wir nun den Begriff der Zariski-Dichthe
 \begin{proof}
  \begin{enumerate}[a)]
   \item
-  Liegt $X$ Zariski-dicht in $Y \subseteq V$, so ist ist $X \subseteq Y$, und nach der Definition von $Z(X)$ auch $Y \subseteq Z(X)$. Da die Mengen, in denen $X$ Zariski-dicht liegt, unter Vereinigung abgeschlossen sind, ist $X$ Zariski-dicht in $Z(X)$, und damit ist auch in jeder Teilmenge $Y \subseteq Z(X)$ mit $X \subseteq Y$.
+  Liegt $X$ Zariski-dicht in $Y \subseteq V$, so ist ist $X \subseteq Y$, und nach der Definition von $Z(X)$ auch $Y \subseteq Z(X)$. Da die Mengen, in denen $X$ Zariski-dicht liegt, unter Vereinigung abgeschlossen sind, liegt $X$ Zariski-dicht in $Z(X)$, und damit auch in jeder Teilmenge $Y \subseteq Z(X)$ mit $X \subseteq Y$.
   \item
   Ist $X$ Zariski-abgeschlossen, so gilt für jede Teilmenge $Y \subseteq V$, in der $X$ Zariski-dicht liegt, dass $Y \subseteq Z(X) = X$. Liegt andererseits $X$ in keiner echt größeren Teilmenge von $V$ Zariski-dicht, so ist
   \[
@@ -65,14 +65,14 @@ Mithilfe des Zariski-Abschlusses können wir nun den Begriff der Zariski-Dichthe
   \]
   und somit $Z(X) = X$.
   \item
-  $Z(X)$ ist Zariski-abgeschlossen, denn $X$ liegt Zariski-dicht in $Z(X)$. Für jede Teilmenge $Y \subseteq V$, in der $Z(X)$ Zariski-dicht liegt, liegt deshalb auch $X$ Zarisk-dicht, weshalb $Y \subseteq Z(X)$.
+  $Z(X)$ ist Zariski-abgeschlossen: $X$ liegt Zariski-dicht in $Z(X)$. Für jede Teilmenge $Y \subseteq V$, in der $Z(X)$ Zariski-dicht liegt, liegt deshalb auch $X$ Zarisk-dicht, weshalb $Y \subseteq Z(X)$.
   
   Für eine Zariski-abgeschlossene Teilmenge $Y \subseteq V$ mit $X \subseteq Y \subseteq Z(X)$ ist, da $X$ Zariski-dicht in $Z(X)$ liegt, auch $Y$ Zariski-dicht in $Z(X)$. Da $Y$ Zariski-abgeschlossen ist, also in keiner echt größeren Teilmenge von $V$ Zariski-dicht liegt, ist $Z(X) = Y$. \qedhere
  \end{enumerate}
 \end{proof}
 
 
-Für Teilmengen $X \subseteq Y \subseteq V$ ist $X$ genau dann Zariski-dicht in $Y$, wenn für jede Funktion $f \in \mc{P}(V)$ die Einschränkung $f_{|Y}$ bereits eindeutig durch $f_{|X}$ bestimmt ist. Dies legt die Vermutung nahe, dass sich der Zariski-Abschluss und die Zariski-Abgeschlossenheit von $X \subseteq V$ mithilfe von Polynomfunktionen formulieren lassen.
+Für Teilmengen $X \subseteq Y \subseteq V$ ist $X$ genau dann Zariski-dicht in $Y$, wenn für jede polynomielle Funktion $f \in \mc{P}(V)$ die Einschränkung $f_{|Y}$ bereits eindeutig durch $f_{|X}$ bestimmt ist. Dies legt die Vermutung nahe, dass sich der Zariski-Abschluss und die Zariski-Abgeschlossenheit von $X \subseteq V$ mithilfe von Polynomfunktionen formulieren lassen.
 
 
 \begin{lem}\label{lem: Charakterisierung durch Verschwindungsmengen}
@@ -87,9 +87,9 @@ Für Teilmengen $X \subseteq Y \subseteq V$ ist $X$ genau dann Zariski-dicht in 
  für eine Teilmenge $\mf{a} \subseteq \mc{P}(V)$.
 \end{lem}
 \begin{proof}
- Sei $\mf{a} \subseteq \mc{P}(V)$. Sei $Y \subseteq V$, so dass $\mc{V}(\mf{a})$ Zariski-dicht in $Y$ liegt. Für alle $f \in \mf{a}$ ist $f_{|\mc{V}(\mf{a})} = 0$, also auch $f_{|Y} = 0$. Daher ist $Y \subseteq \mc{V}(\mf{a})$. Da $\mc{V}(\mf{a})$ in keiner echt größeren Teilmenge von $V$ Zariski-dicht liegt, ist $\mc{V}(\mf{a})$ nach Lemma \ref{lem: erste Aussagen über Zariski-Abschluss} Zariski-abgeschlossen.
+ Sei $\mf{a} \subseteq \mc{P}(V)$ und $Y \subseteq V$, so dass $\mc{V}(\mf{a})$ Zariski-dicht in $Y$ liegt. Für alle $f \in \mf{a}$ ist $f_{|\mc{V}(\mf{a})} = 0$, also auch $f_{|Y} = 0$. Daher ist $Y \subseteq \mc{V}(\mf{a})$. Da $\mc{V}(\mf{a})$ deswegen in keiner echt größeren Teilmenge von $V$ Zariski-dicht liegt, ist $\mc{V}(\mf{a})$ nach Lemma \ref{lem: erste Aussagen über Zariski-Abschluss} Zariski-abgeschlossen.
  
- $X$ ist Zariski-dicht in $\mc{V}(\mc{I}(X))$, da $X \subseteq \mc{V}(\mc{I}(X))$ und für alle $f \in \mc{P}(V)$
+ $X$ liegt Zariski-dicht in $\mc{V}(\mc{I}(X))$, da $X \subseteq \mc{V}(\mc{I}(X))$ und für alle $f \in \mc{P}(V)$
  \[
   f_{|X} = 0 \Rightarrow f \in \mc{I}(X) \Rightarrow f_{|\mc{V}(\mc{I}(X))} = 0.
  \]
@@ -97,7 +97,7 @@ Für Teilmengen $X \subseteq Y \subseteq V$ ist $X$ genau dann Zariski-dicht in 
  \[
   X \subseteq \mc{V}(\mc{I}(X)) \subseteq Z(X).
  \]
- Da $\mc{V}(\mc{I}(X))$ Zariski-abgeschlossen ist, ist auch $\mc{V}(\mc{I}(X)) \supseteq Z(X)$. Also ist
+ Da $\mc{V}(\mc{I}(X))$ Zariski-abgeschlossen ist, ist auch $Z(X) \subseteq \mc{V}(\mc{I}(X))$. Also ist
  \[
   Z(X) = \mc{V}(\mc{I}(X)).
  \]
@@ -115,7 +115,7 @@ Wie der Begriff der Zariski-Abgeschlossenheit bereits nahelegt, lassen sich die 
  Die Zariski-abgeschlossenen Teilmengen von $V$ definieren eine Topologie auf $V$, in der die abgeschlossenen Mengen genau die Zariski-abgeschlossenen Mengen sind.
 \end{lem}
 \begin{proof}
- $\emptyset = \mc{V}(\{1\})$ und $V = \mc{V}(\{0\})$ sind Zariski-abgeschlossen. Für eine Familien $(A_i)_{i \in I}$ von Zariski-abgeschlossenen Mengen ist nach Lemma \ref{lem: Charakterisierung durch Verschwindungsmengen} auch $\bigcap_{i \in I} A_i$ Zariski-ab\-ge\-schlos\-sen, da
+ $\emptyset = \mc{V}(\mc{P}(V))$ und $V = \mc{V}(\emptyset)$ sind Zariski-abgeschlossen. Für eine Familien $(A_i)_{i \in I}$ von Zariski-abgeschlossenen Mengen ist nach Lemma \ref{lem: Charakterisierung durch Verschwindungsmengen} auch $\bigcap_{i \in I} A_i$ Zariski-ab\-ge\-schlos\-sen, da
  \begin{align*}
   \bigcap_{i \in I} A_i
   = \bigcap_{i \in I} \mc{V}(\mc{I}(A_i))
@@ -170,64 +170,21 @@ Das zeigt, dass $\det \not\in k[\tr, \tr_2]$. Also wird $\mc{P}(M_2(k))^{\GL_2(k
 
 
 \subsection{}
-Es sei
-\[
- b_1 := p_2 - p_1 \neq 0
-\]
-und $b_2 \in V$, so dass $\{b_1, b_2\}$ eine $k$-Basis von $V$ ist. Ist
-\begin{gather*}
- p_1 = \lambda_1 b_1 + \lambda_2 b_2,
-\shortintertext{so ist}
- p_2 = (\lambda_1+1) b_1 + \lambda_2 b_2.
-\end{gather*}
-Für die Koordinatentransformationen
-\[
- \psi_i : V \to k, \mu_1 b_1 + \mu_2 b_2 \mapsto \mu_i \qquad \text{für } i = 0, 1,
-\]
-so ist, wie aus der Vorlesung bekannt,
-\begin{align*}
- \mc{P}(V)(\{p_1\}) &= \left( \psi_1 - \lambda_1, \psi_2 - \lambda_2 \right) \text{ und} \\
- \mc{P}(V)(\{p_2\}) &= \left( \psi_1 - \lambda_1-1, \psi_2 - \lambda_2 \right).
-\end{align*}
-Es ist klar, dass
+\begin{bem}
+ Es sei $R$ ein kommutativer Ring mit $1$, und $\mf{m}_1, \mf{m}_2 \subseteq R$ seien maximale Ideale mit $\mf{m}_1 \neq \mf{m}_2$. Dann ist $\mf{m}_1 \cap \mf{m}_2 = \mf{m}_1 \cdot \mf{m}_2$.
+\end{bem}
+\begin{proof}
+ Es ist klar, dass $\mf{m}_1 \cdot \mf{m}_2 \subseteq \mf{m}_1 \cap \mf{m}_2$. Andererseits sind $\mf{m}_1$ und $\mf{m}_2$ koprim, es gibt also $a \in \mf{m}_1$ und $b \in \mf{m}_2$ mit $a+b = 1$. Für $x \in \mf{m}_1 \cap \mf{m}_2$ ist dann
+ \[
+  x = x \cdot 1 = x (a+b) = xa + xb \in \mf{m}_1 \cdot \mf{m}_2. 
+ \]
+\end{proof}
+Aus der Vorlesung ist bekannt, dass $\mc{I}(\{p_1\})$ und $\mc{I}(\{p_2\})$ maximale Ideale sind mit $\mc{I}(\{p_1\}) \neq \mc{I}(\{p_2\})$. Daher ist nach der obigen Bemerkung
 \[
  \mc{I}(\{p_1, p_2\})
+ = \mc{I}(\{p_1\} \cup \{p_2\})
  = \mc{I}(\{p_1\}) \cap \mc{I}(\{p_2\})
- \supseteq \mc{I}(\{p_1\}) \cdot \mc{I}(\{p_2\}).
-\]
-Sei $f \in \mc{I}(\{p_1, p_2\})$ beliebig aber fest. Da $f \in \mc{I}(\{p_1\})$, also
-\[
- f \in \left( \psi_1 - \lambda_1, \psi_2 - \lambda_2 \right),
-\]
-gibt es $r_1, r_2 \in \mc{P}(V)$ mit
-\[
- f = r_1 (\psi_1 - \lambda_1) + r_2(\psi_2 - \lambda_2).
-\]
-Da auch $f \in \mc{I}(\{p_2\})$ ist
-\[
- 0 = f(p_2) = r_1(p_2) (\lambda_1 + 1 - \lambda_1) + r_2(p_2) (\lambda_2 - \lambda_2) = r_1(p_2).
-\]
-Daher ist $r_1 \in \mc{I}(\{p_2\})$. Es gibt also $s_1, s_2 \in \mc{P}(V)$ mit
-\[
- r_1 = s_1 (\psi_1 - \lambda_1 - 1) + s_2 (\psi_2 - \lambda_2).
-\]
-Daher ist
-\begin{align*}
- f
- &= s_1(\psi_1 - \lambda_1)(\psi_1 - \lambda_1 - 1) + s_2(\psi_1 - \lambda_1)(\psi_2 - \lambda_2) + r_2(\psi_2 - \lambda_2) \\
- &= s_1(\psi_1 - \lambda_1)(\psi_1 - \lambda_1 - 1) + \left( s_2(\psi_1 - \lambda_1) + r_2\right)(\psi_2 - \lambda_2)
-\end{align*}
-Da
-\begin{align*}
-  &\, \mc{I}(\{p_1\}) \cdot \mc{I}(\{p_2\}) \\
- =&\, \left( \psi_1 - \lambda_1, \psi_2 - \lambda_2 \right) \cdot \left( \psi_1 - \lambda_1-1, \psi_2 - \lambda_2 \right) \\
- =&\, ( (\psi_1-\lambda_1)(\psi_1-\lambda_1-1), (\psi_2-\lambda_2)(\psi_1-\lambda_1-1), \\
-  &\, (\psi_1-\lambda_1)(\psi_2-\lambda_2), (\psi_2-\lambda_2)^2 ) \\
- =&\, \left( (\psi_1-\lambda_1)(\psi_1-\lambda_1-1), (\psi_2-\lambda_2) \right)
-\end{align*}
-ist $f \in \mc{I}(\{p_1\}) \cdot \mc{I}(\{p_2\})$. Wegen der Beliebigkeit von $f \in \mc{I}(\{p_1, p_2\})$ folgt, dass
-\[
- \mc{I}(\{p_1, p_2\}) = \mc{I}(\{p_1\}) \cdot \mc{I}(\{p_2\}).
+ = \mc{I}(\{p_1\}) \cdot \mc{I}(\{p_2\}).
 \]
 
 
