@@ -264,9 +264,47 @@ also $B$ als $A$-Algebra endlich erzeugt.
 
 
 
+\section{}
+Wir nehmen an, dass $K$ nicht algebraisch über $k$ sei.
+Es seien $x_1, \ldots, x_m \in K$ mit
+\[
+ K = k[x_1, \ldots, x_m].
+\]
+Es sei $A \subseteq \{x_1, \ldots, x_n\}$ eine maximale Menge algebraisch unabhängiger Elemente. (Eine solche existiert, da es nur endlich viele Teilmengen gibt.) Wir können durch passende Nummerierung o.B.d.A. davon ausgehen, dass $A = \{x_1, \ldots, x_r\}$. Nach Annahme ist $r \geq 1$, da die $x_i$ sonst alle algebraisch über $k$ wären, und somit auch $K$ algebraisch über $k$. Wir setzen
+\[
+ F := k(x_1, \ldots, x_r).
+\]
 
+Für alle $r < k \leq n$ ist die Familie $x_1, \ldots, x_r, x_k$ algebraisch abgängig über $k$ ist, also $x_k$ algebraisch über $F$. Daher ist die Körpererweiterung
+\[
+ F \subseteq K = F(x_{r+1}, \ldots, x_n)
+\]
+algebraisch. Da sie von endlich vielen algebraischen Elementen erzeugt wird, ist sie sogar endlich, d.h. $K$ ist als $F$-Vektorraum endlich. Inbesondere ergibt sich daher aus Aufgabe 3, dass $F$ als $k$-Algebra endlich erzeugt ist. Es gibt also $y_1, \ldots, y_s \in F$ mit
+\[
+ F = k[y_1, \ldots, y_s].
+\]
+Da die $x_1, \ldots, x_r$ algebraisch unabhängig sind, ist $k[x_1, \ldots, x_r]$ isomorph zum Polynomring in $r$ Variablen über $k$, und $F$ zu dessen Quotientenkörper. Daher gibt es für alle $i = 0, \ldots, s$ Polynome $f_i, g_i \in k[x_1, \ldots, x_r]$ mit $y_i = f_i/g_i$.
 
+Es sei $\bar{k}$ ein algebraischer Abschluss von $k$. Wir setzen
+\[
+ X := \mc{V}(\{g_i \mid 1 \leq i \leq s\}) = \mc{V}\left(\prod_{i=1}^s g_i\right).
+\]
+Wir bemerken, dass $X \neq \bar{k}^r$, denn die Inklusion
+\[
+ k[x_1, \ldots, x_r] \hookrightarrow \bar{k}[x_1, \ldots, x_r] \cong \mc{P}(\bar{k}).
+\]
+ist ein injektiver, unitärer Ringhomomorphismus, und da $g_i \neq 0$ für alle $1 \leq i \leq s$ ist auch $\prod_{i=1}^s g_i \neq 0$. Also gibt es $z \in \bar{k}^r$ mit $\prod_{i=1}^n g_i (z) \neq 0$.
 
+Wir betrachten die Abbildung
+\[
+ \varphi : F \to \Abb\left(\bar{k}^r \smallsetminus X, \bar{k}\right),
+ \left[ \frac{f}{g} \right] \mapsto \left( x \mapsto \frac{f(x)}{g(x)} \right),
+\]
+wobei die Wohldefiniertheit klar ist. Für alle $1 \leq i \leq r$ sei
+\[
+ h_i \in k[x_i] \subseteq k[x_1, \ldots, x_r] \subseteq F
+\]
+das Minimalpolynom von $z_i$ über $k$ (da $x_i$ transzendend über $k$ ist, können wir $k[x_i]$ als Polynomring über $k$ verstehen). Wir setzten $h := \varphi(\prod_{i=1}^r h_i)$. Da $h \neq 0$ ist $h$ in $F$ invertierbar, also auch $\varphi(h)$ in $\Abb(\bar{k}^r \smallsetminus X, \bar{k})$. Dies steht jedoch im Widerspruch dazu, dass $\varphi(h)(z) = 0$.
 
 
 
