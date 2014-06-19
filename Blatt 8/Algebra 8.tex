@@ -34,7 +34,7 @@
  in $R$ stabilisiert.
 \end{lem}
 \begin{proof}
- Angenommen, $M$ ist noethersch. Es sei $M' \subseteq M$ ein Untermodul. Dann definieren wir eine eine aufsteigende Folge von Untermoduln von $M'$ wie folgt: Wir beginnen mit $M_0 := 0$. Ist $M_i$ definiert und $M_i \neq M'$, so gibt es $m_{i+1} \in M' \smallsetminus M_i$, und wir setzen $M_{i+1} := M_i + R m_{i+1}$; ansonsten setzen wir $M_{i+1} := M_i = M'$. Da $M$ noethersch ist, stabilisert die aufsteigende Kette
+ Angenommen, $M$ ist noethersch. Es sei $M' \subseteq M$ ein Untermodul. Dann definieren wir eine eine aufsteigende Folge von Untermoduln von $M'$ wie folgt: Wir beginnen mit $M_0 := 0$. Ist $M_i$ definiert und $M_i \neq M'$, so gibt es $m_{i+1} \in M' \smallsetminus M_i$, und wir setzen $M_{i+1} := M_i + R m_{i+1}$; ansonsten setzen wir $M_{i+1} := M_i = M'$. Da $M$ noethersch ist, stabilisiert die aufsteigende Kette
  \[
   0 = M_0 \subsetneq M_1 \subsetneq M_2 \subsetneq M_3 \subsetneq \ldots
  \]
@@ -56,7 +56,7 @@
  \[
   M' = (m_1, \ldots, m_n).
  \]
- Nach Definition von $M'$ gibt es ein $N \in \N$ mit $m_1, \ldots, m_n \in M_N$. Es ist daher $M_N = M$ und somit auch $M_k = M$ für alle $k \geq N$. Also stabilisert die Kette.
+ Nach Definition von $M'$ gibt es ein $N \in \N$ mit $m_1, \ldots, m_n \in M_N$. Es ist daher $M_N = M$ und somit auch $M_k = M$ für alle $k \geq N$. Also stabilisiert die Kette.
 \end{proof}
 
 
@@ -79,7 +79,7 @@ Für alle $i \geq 1$ definieren wir $a_i \in R$ als den Leitkoeffizienten von $f
 \[
  J_i := (a_1, \ldots, a_i) \subseteq R.
 \]
-Da $R$ noethersch ist, stabilisert die aufsteigende Kette von Idealen
+Da $R$ noethersch ist, stabilisiert die aufsteigende Kette von Idealen
 \[
  J_1 \subseteq J_2 \subseteq J_3 \subseteq \ldots
 \]
@@ -98,6 +98,96 @@ Deshalb ist
 ein Polynom mit gleichem Grad und gleichen Leitkoeffizienten wie $f_{n+1}$. Da $f_{n+1} \not\in (f_0, \ldots, f_n)$ ist auch $f_{n+1}-g \not\in (f_1, \ldots, f_n)$. Da $\deg (f_{n+1}-g) < \deg f_{n+1}$ steht dies im Widerspruch zur Gradminimimalität von $f_{n+1}$.
 
 Es ist also jedes Ideal in $R[X]$ endlich erzeugt, und somit $R[X]$ somit noethersch.
+
+
+
+
+
+
+\section{}
+
+
+\subsection{}
+Es sei
+\begin{center}
+ \begin{tikzpicture}[auto, node distance = 4em]
+  \node (01) {$0$};
+  \node (M') [right of = 01] {$M'$};
+  \node (M) [right of = M'] {$M$};
+  \node (M'') [right of = M] {$M''$};
+  \node (02) [right of = M''] {$0$};
+  \draw[->] (01) to (M');
+  \draw[->] (M') to node {$i$} (M);
+  \draw[->] (M) to node {$\pi$} (M'');
+  \draw[->] (M'') to (02);
+ \end{tikzpicture}
+\end{center}
+eine kurze exakte Sequenz von $R$-Moduln. Wir können o.B.d.A. davon ausgehen, dass $M' \subseteq M$ ein Untermodul ist, $i$ die kanonische Inklusion, $M'' = M/M'$ und $\pi$ die kanonische Projektion.
+
+Angenommen, $M$ ist noethersch. Jede aufsteigende Ketten von Untermoduln
+\[
+ M_0 \subseteq M_1 \subseteq M_2 \subseteq \ldots
+\]
+von $M'$ ist auch eine aufsteigende Kette von Untermoduln von $M$ und stabilisiert somit. Also ist $M'$ noethersch. Jede aufsteigende Kette von Untermoduln
+\[
+ N_0 \subseteq N_1 \subseteq N_2 \subseteq \ldots
+\]
+von $M'' = M/M'$ liefert eine aufsteigende Kette von Untermoduln
+\[
+ \pi^{-1}(N_0) \subseteq \pi^{-1}(N_1) \subseteq \pi^{-1}(N_2) \subseteq \ldots
+\]
+von $M$, die $M'$ enthalten. Da $M$ noethersch ist stabilisiert diese Kette, und da $\pi$ surjektiv ist, und somit
+\[
+ \pi(\pi^{-1}(N_i)) = N_i \text{ für alle } i \in \N
+\]
+stabilisiert auch die Kette in $M''$. Also ist $M''$ noethersch.
+
+Angenommen, $M'$ und $M''$ sind noethersch. Es sei dann
+\[
+ M_0 \subseteq M_1 \subseteq M_2 \subseteq \ldots
+\]
+eine aufsteigende Kette von Untermoduln von $M$. Für alle $i \in \N$ setzen wir
+\[
+ M'_i := M' \cap M_i \text{ und } M''_i := \pi(M_i)
+\]
+und erhalten so aufsteigende Ketten von Untermoduln von $M'$ und $M''$. Da diese noethersch sind stabilisieren dies Ketten. Es gibt also $N \in \N$ mit
+\[
+ M'_n = M'_N \text{ und } M''_n = M''_N \text{ für alle } n \geq N.
+\]
+Daher ist auch $M_n = M_N$ für alle $n \geq N$. (Denn für alle $n \geq N$ enthalten wir das folgende kommutive Diagramm mit exakten Zeilen.
+\begin{center}
+ \begin{tikzpicture}[auto, node distance = 5em]
+ \node (01) {$0$};
+ \node (M'_N) [right of = 01] {$M'_N$};
+ \node (M_N) [right of = M'_N] {$M_N$};
+ \node (M''_N) [right of = M_N] {$M''_N$};
+ \node (02) [right of = M''_N] {$0$};
+ \node (03) [below of = 01] {$0$};
+ \node (M'_n) [right of = 03] {$M'_n$};
+ \node (M_n) [right of = M'_n] {$M_n$};
+ \node (M''_n) [right of = M_n] {$M''_n$};
+ \node (04) [right of = M''_n] {$0$};
+ \draw[->] (01) to (M'_N);
+ \draw[->] (M'_N) to node {$i$} (M_N);
+ \draw[->] (M_N) to node {$\pi$} (M''_N);
+ \draw[->] (M''_N) to (02);
+ \draw[double equal sign distance] (01) to (03);
+ \draw[double equal sign distance] (M'_N) to (M'_n);
+ \draw[left hook->] (M_N) to (M_n);
+ \draw[double equal sign distance] (M''_N) to (M''_n);
+ \draw[double equal sign distance] (02) to (04);
+ \draw[->] (03) to (M'_n);
+ \draw[->] (M'_n) to node {$i$} (M_n);
+ \draw[->] (M_n) to node {$\pi$} (M''_n);
+ \draw[->] (M''_n) to (04);
+ \end{tikzpicture}
+\end{center}
+Nach dem Fünferlemma ist die Inklusion bereits eine Gleichheit.)
+
+
+
+
+
 
 
 
