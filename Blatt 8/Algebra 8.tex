@@ -109,19 +109,9 @@ Es ist also jedes Ideal in $R[X]$ endlich erzeugt, und somit $R[X]$ somit noethe
 
 \subsection{}
 Es sei
-\begin{center}
- \begin{tikzpicture}[auto, node distance = 4em]
-  \node (01) {$0$};
-  \node (M') [right of = 01] {$M'$};
-  \node (M) [right of = M'] {$M$};
-  \node (M'') [right of = M] {$M''$};
-  \node (02) [right of = M''] {$0$};
-  \draw[->] (01) to (M');
-  \draw[->] (M') to node {$i$} (M);
-  \draw[->] (M) to node {$\pi$} (M'');
-  \draw[->] (M'') to (02);
- \end{tikzpicture}
-\end{center}
+\[
+ 0 \to M' \xlongrightarrow{i} M \xlongrightarrow{\pi} M'' \to 0
+\]
 eine kurze exakte Sequenz von $R$-Moduln. Wir können o.B.d.A. davon ausgehen, dass $M' \subseteq M$ ein Untermodul ist, $i$ die kanonische Inklusion, $M'' = M/M'$ und $\pi$ die kanonische Projektion.
 
 Angenommen, $M$ ist noethersch. Jede aufsteigende Ketten von Untermoduln
@@ -183,6 +173,28 @@ Daher ist auch $M_n = M_N$ für alle $n \geq N$. (Denn für alle $n \geq N$ enth
  \end{tikzpicture}
 \end{center}
 Nach dem Fünferlemma ist die Inklusion bereits eine Gleichheit.)
+
+
+\subsection{}
+Sind $M_1, M_2$ zwei noethersche $R$-Moduln, so ist auch $M_1 \oplus M_2$ noethersch. Dies ergibt sich aus dem vorherigen Aufgabenteil durch die kurze exakte Sequenz
+\[
+ 0 \to M_1 \to M_1 \oplus M_2 \to M_2 \to 0.
+\]
+Induktiv ergibt sich daher, dass für beliebige noethersche $R$-Moduln $M_1, \ldots, M_n$ auch $M_1 \oplus \ldots \oplus M_n$ noethersch ist. Ist $R$ noethersch, und somit noethersch als Modul über sich selbst, so ist daher insbesonder $R^n$ für alle $n \in \N$ als $R$-Modul noethersch.
+
+Für einen endlich erzeugten $R$-Modul $M$ gibt es $m_1, \ldots, m_n \in M$, so dass der Modulhomomorphismus
+\[
+ f: R^n \to M, (r_1, \ldots, r_n) \to \sum_{i=1}^n r_i m_i
+\]
+surjektiv ist. Da $R^n$ noethersch ist, ergibt sich aus dem vorherigen Aufgabenteil durch die kurze exakte Sequenz
+\[
+ 0 \to \ker f \hookrightarrow R^n \xlongrightarrow{f} M \to 0,
+\]
+dass auch $M$ noethersch ist.
+
+
+
+
 
 
 
