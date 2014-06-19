@@ -16,6 +16,45 @@
 \maketitle
 
 
+\section{}
+
+\begin{lem}
+ Es sei $R$ ein Ring und $M$ ein $R$-Modul. Dann sind äquivalent:
+ \begin{enumerate}[i)]
+  \item $M$ ist noethersch, d.h. jede aufsteigende Kette von Untermoduln von $M$
+  \[
+   M_0 \subseteq M_1 \subseteq M_2 \subseteq \ldots
+  \]
+  stabilisiert.
+  \item Jeder Untermodul von $M$ ist endlich erzeugt über $R$.
+ \end{enumerate}
+\end{lem}
+\begin{proof}
+ Angenommen, $M$ ist noethersch. Es sei $M' \subseteq M$ ein Untermodul. Dann definieren wir eine eine aufsteigende Folge von Untermoduln von $M'$ wie folgt: Wir beginnen mit $M_0 := 0$. Ist $M_i$ definiert und $M_i \neq M'$, so gibt es $m_{i+1} \in M' \smallsetminus M_i$, und wir setzen $M_{i+1} := M_i + R m_{i+1}$; ansonsten setzen wir $M_{i+1} := M_i = M'$. Da $M$ noethersch ist, stabilisert die aufsteigende Kette
+ \[
+  0 = M_0 \subsetneq M_1 \subsetneq M_2 \subsetneq M_3 \subsetneq \ldots
+ \]
+ von Untermoduln von $M$. Nach Konstruktion der $M_i$ gibt es daher $n \in \N$ mit
+ \[
+  M' = M_n = Rm_1 + \ldots + Rm_n = (m_1, \ldots, m_n).
+ \]
+ Das zeigt, dass $M'$ ein endlich erzeugter $R$-Modul ist.
+ 
+ Sei andererseits jeder Untermodul von $M$ endlich erzeugt über $R$. Für eine aufsteigende Kette
+ \[
+  M_0 \subseteq M_1 \subseteq M_2 \subseteq \ldots
+ \]
+ von Untermoduln von $M$ setzen wir
+ \[
+  M' := \bigcup_{k \in \N} M_k.
+ \]
+ $M'$ ist ein Untermodul von $M$ und somit endlich erzeugt. Nach Annahme gibt es daher $m_1, \ldots, m_n \in M'$ mit
+ \[
+  M' = (m_1, \ldots, m_n).
+ \]
+ Nach Definition von $M'$ gibt es ein $N \in \N$ mit $m_1, \ldots, m_n \in M_N$. Es ist daher $M_N = M$ und somit auch $M_k = M$ für alle $k \geq N$. Also stabilisert die Kette.
+\end{proof}
+
 
 
 
