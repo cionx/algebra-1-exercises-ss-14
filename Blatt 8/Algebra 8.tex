@@ -130,7 +130,7 @@ von $M$, die $M'$ enthalten. Da $M$ noethersch ist stabilisiert diese Kette, und
 \[
  \pi(\pi^{-1}(N_i)) = N_i \text{ für alle } i \in \N
 \]
-stabilisiert auch die Kette in $M''$. Also ist $M''$ noethersch.
+stabilisiert auch die Kette in $M''$. Also ist $M''$ noethersch. (Aus den Beweisen geht auch direkt hervor, dass Untermoduln und Quotientenmoduln noetherscher Moduln ebenfalls noethersch sind.)
 
 Angenommen, $M'$ und $M''$ sind noethersch. Es sei dann
 \[
@@ -186,11 +186,25 @@ Für einen endlich erzeugten $R$-Modul $M$ gibt es $m_1, \ldots, m_n \in M$, so 
 \[
  f: R^n \to M, (r_1, \ldots, r_n) \to \sum_{i=1}^n r_i m_i
 \]
-surjektiv ist. Da $R^n$ noethersch ist, ergibt sich aus dem vorherigen Aufgabenteil durch die kurze exakte Sequenz
+surjektiv ist. Da $R^n$ noethersch als $R$-Modul ist, und $M \cong R^n / \ker f$ ist damit auch $M$ noethersch über $R$.
+
+
+\subsection{}
+Es bezeichne $\pi : R \to R/I$ die kanonische Projektion. $\pi$ ist sowohl ein Ringhomomorphismus als auch ein $R$-Modulhomomorphismus, wobei für alle $r, s \in R$
 \[
- 0 \to \ker f \hookrightarrow R^n \xlongrightarrow{f} M \to 0,
+ r \cdot \pi(s) = \pi(rs) = \pi(r) \pi(s),
 \]
-dass auch $M$ noethersch ist.
+also für alle $r \in R, m \in R/I$
+\[
+ r \cdot m = \pi(r) \cdot m.
+\]
+
+Da $R$ als $R$-Modul noethersch ist, ist auch der Quotientenmodul $R/I$ noethersch über $R$. Offenbar entsprechen die Ideale in $R/I$ genau den $R$-Untermoduln von $R/I$. Ein Ideal $J \subseteq R/I$ ist daher als $R$-Modul endlich erzeugt, es gibt also $m_1, \ldots, m_n \in J$ mit
+\[
+ J = \sum_{i=1}^n R m_i = \sum_{i=1}^n \pi(R) m_i = \sum_{i=1}^n (R/I) m_i.
+\]
+Das zeigt, dass $J$ als Ideal in $R/I$ endlich erzeugt ist. Da jedes Ideal in $R/I$ endlich erzeugt ist, ist $R/I$ als Ring noethersch.
+
 
 
 
