@@ -17,7 +17,7 @@
 
 \section{}
 
-\begin{lem}
+\begin{lem}\label{lem: Äquivalente Definitionen von noethersch}
  Es sei $R$ ein Ring und $M$ ein $R$-Modul. Dann sind äquivalent:
  \begin{enumerate}[i)]
   \item $M$ ist noethersch, d.h. jede aufsteigende Kette von Untermoduln von $M$
@@ -27,6 +27,11 @@
   stabilisiert.
   \item Jeder Untermodul von $M$ ist endlich erzeugt über $R$.
  \end{enumerate}
+ Insbesondere ist ein kommutiver Ring $R$ genau dann noethersch, wenn jede aufsteigende Kette von Idealen
+ \[
+  I_0 \subseteq I_1 \subseteq I_2 \subseteq I_3 \subseteq \ldots
+ \]
+ in $R$ stabilisiert.
 \end{lem}
 \begin{proof}
  Angenommen, $M$ ist noethersch. Es sei $M' \subseteq M$ ein Untermodul. Dann definieren wir eine eine aufsteigende Folge von Untermoduln von $M'$ wie folgt: Wir beginnen mit $M_0 := 0$. Ist $M_i$ definiert und $M_i \neq M'$, so gibt es $m_{i+1} \in M' \smallsetminus M_i$, und wir setzen $M_{i+1} := M_i + R m_{i+1}$; ansonsten setzen wir $M_{i+1} := M_i = M'$. Da $M$ noethersch ist, stabilisert die aufsteigende Kette
@@ -54,15 +59,50 @@
  Nach Definition von $M'$ gibt es ein $N \in \N$ mit $m_1, \ldots, m_n \in M_N$. Es ist daher $M_N = M$ und somit auch $M_k = M$ für alle $k \geq N$. Also stabilisert die Kette.
 \end{proof}
 
-Insbesondere ist ein kommutiver Ring $R$ genau dann noethersch, wenn jede aufsteigende Kette von Idealen
-\[
- I_0 \subseteq I_1 \subseteq I_2 \subseteq I_3 \subseteq \ldots
-\]
-in $R$ stabilisiert.
+
 
 
 \subsection{}
 Da $k$ kommutativ ist und nur zwei Ideale enthält, ist $k$ offenbar noethersch. Induktiv ergibt sich damit aus dem Hilbertschen Basissatz direkt, dass auch $k[x_1, \ldots, x_n]$ für alle $n \in \N$ noethersch ist.
+
+
+\subsection{}
+Es sei $R$ ein kommutativer noetherscher Ring. Angenommen, $R[X]$ ist nicht noethersch. Nach Lemma \ref{lem: Äquivalente Definitionen von noethersch} gibt es dann ein Ideal $I \subseteq R[X]$ das nicht endlich erzeugt über $R[X]$ ist. (Inbesondere ist $I \neq 0$.)
+
+Wir definieren eine Folge $(f_i)_{i \geq 1}$ von Polynomen $f_i \in I$ wie folgt: Wir wählen $f_1 \in I \smallsetminus \{0\}$ mit minimalen Grad. Ist $f_i$ definiert, so ist, da $I$ nicht endlich erzeugt ist,
+\[
+ (f_1, \ldots, f_i) \neq I.
+\]
+Es sei dann $f_{i+1} \in I \smallsetminus (f_1, \ldots, f_i)$ vom minimalen Grad. Man bemerke, dass stets $\deg f_i \leq \deg f_{i+1}$.
+
+Für alle $i \geq 1$ definieren wir $a_i \in R$ als den Leitkoeffizienten von $f_i$ und setzen
+\[
+ J_i := (a_1, \ldots, a_i) \subseteq R.
+\]
+Da $R$ noethersch ist, stabilisert die aufsteigende Kette von Idealen
+\[
+ J_1 \subseteq J_2 \subseteq J_3 \subseteq \ldots
+\]
+Es gibt also ein $n \geq 1$ mit
+\[
+ (a_1, \ldots, a_{n+1}) = J_{n+1} = J_n = (a_1, \ldots, a_n),
+\]
+was äquivalent dazu ist, dass $a_{n+1} \in (a_1, \ldots, a_n)$. Es gibt also $r_1, \ldots, r_n \in R$ mit
+\[
+ a_{n+1} = \sum_{i=1}^n r_i a_i.
+\]
+Deshalb ist
+\[
+ g := \sum_{i=1}^n r_i f_i \cdot X^{\deg f_{n+1} - \deg f_i} \in (f_1, \ldots, f_n)
+\]
+ein Polynom mit gleichem Grad und gleichen Leitkoeffizienten wie $f_{n+1}$. Da $f_{n+1} \not\in (f_0, \ldots, f_n)$ ist auch $f_{n+1}-g \not\in (f_1, \ldots, f_n)$. Da $\deg (f_{n+1}-g) < \deg f_{n+1}$ steht dies im Widerspruch zur Gradminimimalität von $f_{n+1}$.
+
+Es ist also jedes Ideal in $R[X]$ endlich erzeugt, und somit $R[X]$ somit noethersch.
+
+
+
+
+
 
 
 
