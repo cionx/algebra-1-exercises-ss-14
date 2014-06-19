@@ -206,6 +206,68 @@ Da $R$ als $R$-Modul noethersch ist, ist auch der Quotientenmodul $R/I$ noethers
 Das zeigt, dass $J$ als Ideal in $R/I$ endlich erzeugt ist. Da jedes Ideal in $R/I$ endlich erzeugt ist, ist $R/I$ als Ring noethersch.
 
 
+\section{}
+Wir gehen im folgenden davon aus, dass $A, B$ und $C$ kommutativ sind.
+
+Da $C$ als $A$-Algebra endlich erzeugt ist, gibt es $x_1, \ldots, x_n \in C$ mit
+\[
+ C = A[x_1, \ldots, x_n],
+\]
+und da $C$ als $B$-Modul endlich erzeugt ist, gibt es $y_1, \ldots, y_n \in C$ mit
+\[
+ C = By_1 + \ldots + By_n.
+\]
+Inbesondere gibt es daher für alle $1 \leq i \leq n$ Koeffizienten $b_{ij} \in B, 1 \leq j \leq m$ mit
+\[
+ x_i = \sum_{j=1}^m b_{ij} y_j \text{ für alle } i = 1, \ldots, n,
+\]
+und für alle $1 \leq i,j \leq n$ Koeffizienten $b_{ijk} \in B, 1 \leq k \leq n$ mit
+\[
+ y_i y_j = \sum_{k=1}^n b_{ijk} y_k.
+\]
+Wir setzen
+\[
+ B_0 := A[b_{ij}, b_{ijk} \mid 1 \leq i,j,k \leq n]
+\]
+Da $A$ noethersch und kommutativ ist, ist auch
+\[
+ A[x_1, \ldots, x_{n^2 + n^3}]
+\]
+noethersch (dies ergibt sich analog zum Aufgabe 1 (a)), und somit nach Aufgabe 2 (c) auch $B_0$ als Quotient dieses Polynomringes. 
+
+Wir behaupten, dass
+\[
+ B_0 y_1 + \ldots + B_0 y_n = C.
+\]
+Dass $\sum_{i=1}^n B_n y_i \subseteq C$ ist klar. Andererseits ist für alle $1 \leq r,s \leq k$
+\[
+ x_r x_s
+ = \left( \sum_{i=1}^m b_{ri} y_i \right) \left( \sum_{j=1}^m b_{sj} y_j \right)
+ = \sum_{i,j=1}^m b_{ri} b_{sj} y_i y_j
+ = \sum_{i,j,k=1}^m b_{ri} b_{sj} b_{ijk} y_k,
+\]
+also $x_r x_s \in C$. Analog ergibt sich induktiv, dass $x_1^{\nu_1} \cdots x_n^{\nu_n} \in \sum_{i=1}^n B_0 y_i$ für alle $\nu_1, \ldots, \nu_n \in \N$. Da $C$ als $A$-Modul von diesen Elementen erzeugt wird, folgt, dass $C \subseteq \sum_{i=1}^n B_0 y_i$.
+
+Es ist also $C$ ein endlich erzeugter $B_0$-Modul. Da $B_0$ noethersch ist, ist $C$ damit nach Aufgabe 2 (b) noethersch als $B_0$-Modul. Daher ist $B \subseteq C$ als $B_0$-Modul ebenfalls endlich erzeugt. Es gibt also $z_1, \ldots, z_s \in B$ mit
+\[
+ B_0 z_1 + \ldots + B_0 z_s = B.
+\]
+Es ist daher
+\[
+ A[b_{ij}, b_{ijk}, z_l \mid 1 \leq i,j,k \leq n, 1 \leq l \leq s ]
+ = B_0 [z_l \mid 1 \leq l \leq s]
+ = B,
+\]
+also $B$ als $A$-Algebra endlich erzeugt.
+
+
+
+
+
+
+
+
+
 
 
 
