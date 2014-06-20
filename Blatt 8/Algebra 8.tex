@@ -15,6 +15,16 @@
 \begin{document}
 \maketitle
 
+
+
+
+
+Wir gehen im Folgenden stets davon aus, dass alle Ringe kommutativ sind.
+
+
+
+
+
 \section{}
 
 \begin{lem}\label{lem: Äquivalente Definitionen von noethersch}
@@ -124,11 +134,11 @@ von $M'$ ist auch eine aufsteigende Kette von Untermoduln von $M$ und stabilisie
 \]
 von $M'' = M/M'$ liefert eine aufsteigende Kette von Untermoduln
 \[
- \pi^{-1}(N_0) \subseteq \pi^{-1}(N_1) \subseteq \pi^{-1}(N_2) \subseteq \ldots
+ M' \subseteq \pi^{-1}(N_0) \subseteq \pi^{-1}(N_1) \subseteq \pi^{-1}(N_2) \subseteq \ldots
 \]
-von $M$, die $M'$ enthalten. Da $M$ noethersch ist stabilisiert diese Kette, und da $\pi$ surjektiv ist, und somit
+von $M$. Da $M$ noethersch ist stabilisiert diese Kette, und da $\pi$ surjektiv ist, und somit
 \[
- \pi(\pi^{-1}(N_i)) = N_i \text{ für alle } i \in \N
+ \pi(\pi^{-1}(N_i)) = N_i \text{ für alle } i \in \N,
 \]
 stabilisiert auch die Kette in $M''$. Also ist $M''$ noethersch. (Aus den Beweisen geht auch direkt hervor, dass Untermoduln und Quotientenmoduln noetherscher Moduln ebenfalls noethersch sind.)
 
@@ -140,7 +150,7 @@ eine aufsteigende Kette von Untermoduln von $M$. Für alle $i \in \N$ setzen wir
 \[
  M'_i := M' \cap M_i \text{ und } M''_i := \pi(M_i)
 \]
-und erhalten so aufsteigende Ketten von Untermoduln von $M'$ und $M''$. Da diese noethersch sind stabilisieren dies Ketten. Es gibt also $N \in \N$ mit
+und erhalten so aufsteigende Ketten von Untermoduln von $M'$ und $M''$. Da diese noethersch sind stabilisieren diese Ketten. Es gibt also $N \in \N$ mit
 \[
  M'_n = M'_N \text{ und } M''_n = M''_N \text{ für alle } n \geq N.
 \]
@@ -163,7 +173,7 @@ Daher ist auch $M_n = M_N$ für alle $n \geq N$. (Denn für alle $n \geq N$ enth
  \draw[->] (M''_N) to (02);
  \draw[double equal sign distance] (01) to (03);
  \draw[double equal sign distance] (M'_N) to (M'_n);
- \draw[left hook->] (M_N) to (M_n);
+ \draw[right hook->] (M_N) to (M_n);
  \draw[double equal sign distance] (M''_N) to (M''_n);
  \draw[double equal sign distance] (02) to (04);
  \draw[->] (03) to (M'_n);
@@ -172,7 +182,7 @@ Daher ist auch $M_n = M_N$ für alle $n \geq N$. (Denn für alle $n \geq N$ enth
  \draw[->] (M''_n) to (04);
  \end{tikzpicture}
 \end{center}
-Nach dem Fünferlemma ist die Inklusion bereits eine Gleichheit.)
+Nach dem Fünferlemma ist die Inklusion $M_N \hookrightarrow M_n$ bereits eine Gleichheit.)
 
 
 \subsection{}
@@ -180,9 +190,9 @@ Sind $M_1, M_2$ zwei noethersche $R$-Moduln, so ist auch $M_1 \oplus M_2$ noethe
 \[
  0 \to M_1 \to M_1 \oplus M_2 \to M_2 \to 0.
 \]
-Induktiv ergibt sich daher, dass für beliebige noethersche $R$-Moduln $M_1, \ldots, M_n$ auch $M_1 \oplus \ldots \oplus M_n$ noethersch ist. Ist $R$ noethersch, und somit noethersch als Modul über sich selbst, so ist daher insbesonder $R^n$ für alle $n \in \N$ als $R$-Modul noethersch.
+Induktiv ergibt sich daher, dass für beliebige noethersche $R$-Moduln $M_1, \ldots, M_n$ auch $M_1 \oplus \ldots \oplus M_n$ noethersch ist. Ist $R$ noethersch, und somit noethersch als Modul über sich selbst, so ist daher insbesondere $R^n$ für alle $n \in \N$ als $R$-Modul noethersch.
 
-Für einen endlich erzeugten $R$-Modul $M$ gibt es $m_1, \ldots, m_n \in M$, so dass der Modulhomomorphismus
+Für einen endlich erzeugten $R$-Modul $M$ gibt es $m_1, \ldots, m_n \in M$, so dass der $R$-Modulhomomorphismus
 \[
  f: R^n \to M, (r_1, \ldots, r_n) \to \sum_{i=1}^n r_i m_i
 \]
@@ -199,11 +209,11 @@ also für alle $r \in R, m \in R/I$
  r \cdot m = \pi(r) \cdot m.
 \]
 
-Da $R$ als $R$-Modul noethersch ist, ist auch der Quotientenmodul $R/I$ noethersch über $R$. Offenbar entsprechen die Ideale in $R/I$ genau den $R$-Untermoduln von $R/I$. Ein Ideal $J \subseteq R/I$ ist daher als $R$-Modul endlich erzeugt, es gibt also $m_1, \ldots, m_n \in J$ mit
+Da $R$ als $R$-Modul noethersch ist, ist auch der Quotientenmodul $R/I$ noethersch über $R$. Offenbar entsprechen die Ideale in $R/I$ genau den $R$-Untermoduln von $R/I$. Jedes Ideal $J \subseteq R/I$ ist daher endlich erzeugt als $R$-Modul, weshalb es $m_1, \ldots, m_n \in J$ gibt, so dass
 \[
  J = \sum_{i=1}^n R m_i = \sum_{i=1}^n \pi(R) m_i = \sum_{i=1}^n (R/I) m_i.
 \]
-Das zeigt, dass $J$ als Ideal in $R/I$ endlich erzeugt ist. Da jedes Ideal in $R/I$ endlich erzeugt ist, ist $R/I$ als Ring noethersch.
+Das zeigt, dass $J$ auch als Ideal in $R/I$ endlich erzeugt ist. Da jedes Ideal in $R/I$ endlich erzeugt ist, ist $R/I$ als Ring noethersch.
 
 
 \section{}
