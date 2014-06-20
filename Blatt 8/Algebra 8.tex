@@ -34,15 +34,15 @@
  in $R$ stabilisiert.
 \end{lem}
 \begin{proof}
- Angenommen, $M$ ist noethersch. Es sei $M' \subseteq M$ ein Untermodul. Dann definieren wir eine eine aufsteigende Folge von Untermoduln von $M'$ wie folgt: Wir beginnen mit $M_0 := 0$. Ist $M_i$ definiert und $M_i \neq M'$, so gibt es $m_{i+1} \in M' \smallsetminus M_i$, und wir setzen $M_{i+1} := M_i + R m_{i+1}$; ansonsten setzen wir $M_{i+1} := M_i = M'$. Da $M$ noethersch ist, stabilisiert die aufsteigende Kette
+ Angenommen, $M$ ist noethersch. Es sei $M' \subseteq M$ ein Untermodul. Dann definieren wir eine eine aufsteigende Kette von Untermoduln von $M$ wie folgt: Wir beginnen mit $M_0 := 0$. Ist $M_i$ definiert und $M_i \neq M'$, so gibt es $m_{i+1} \in M' \smallsetminus M_i$, und wir setzen $M_{i+1} := M_i + R m_{i+1}$; ansonsten setzen wir $M_{i+1} := M_i = M'$. Da $M$ noethersch ist, stabilisiert die aufsteigende Kette
  \[
-  0 = M_0 \subsetneq M_1 \subsetneq M_2 \subsetneq M_3 \subsetneq \ldots
+  0 = M_0 \subseteq M_1 \subseteq M_2 \subseteq \ldots
  \]
  von Untermoduln von $M$. Nach Konstruktion der $M_i$ gibt es daher $n \in \N$ mit
  \[
   M' = M_n = Rm_1 + \ldots + Rm_n = (m_1, \ldots, m_n).
  \]
- Das zeigt, dass $M'$ ein endlich erzeugter $R$-Modul ist.
+ Also ist $M'$ ein endlich erzeugter $R$-Modul.
  
  Sei andererseits jeder Untermodul von $M$ endlich erzeugt über $R$. Für eine aufsteigende Kette
  \[
@@ -52,7 +52,7 @@
  \[
   M' := \bigcup_{k \in \N} M_k.
  \]
- $M'$ ist ein Untermodul von $M$ und somit endlich erzeugt. Nach Annahme gibt es daher $m_1, \ldots, m_n \in M'$ mit
+ $M'$ ist ein Untermodul von $M$ und somit endlich erzeugt. Also gibt es $m_1, \ldots, m_n \in M'$ mit
  \[
   M' = (m_1, \ldots, m_n).
  \]
@@ -63,11 +63,11 @@
 
 
 \subsection{}
-Da $k$ kommutativ ist und nur zwei Ideale enthält, ist $k$ offenbar noethersch. Induktiv ergibt sich damit aus dem Hilbertschen Basissatz direkt, dass auch $k[x_1, \ldots, x_n]$ für alle $n \in \N$ noethersch ist.
+$k$ ist kommutativ und noethersch, da $k$ nur zwei Ideale enthält. Induktiv ergibt sich damit aus dem Hilbertschen Basissatz direkt, dass auch $k[x_1, \ldots, x_n]$ für alle $n \in \N$ noethersch ist.
 
 
 \subsection{}
-Es sei $R$ ein kommutativer noetherscher Ring. Angenommen, $R[X]$ ist nicht noethersch. Nach Lemma \ref{lem: Äquivalente Definitionen von noethersch} gibt es dann ein Ideal $I \subseteq R[X]$ das nicht endlich erzeugt über $R[X]$ ist. (Inbesondere ist $I \neq 0$.)
+Es sei $R$ ein kommutativer noetherscher Ring. Wir nehmen an, dass $R[X]$ nicht noethersch ist. Nach Lemma \ref{lem: Äquivalente Definitionen von noethersch} gibt es dann ein Ideal $I \subseteq R[X]$ das nicht endlich erzeugt über $R[X]$ ist. (Inbesondere ist $I \neq 0$.)
 
 Wir definieren eine Folge $(f_i)_{i \geq 1}$ von Polynomen $f_i \in I$ wie folgt: Wir wählen $f_1 \in I \smallsetminus \{0\}$ mit minimalen Grad. Ist $f_i$ definiert, so ist, da $I$ nicht endlich erzeugt ist,
 \[
@@ -95,9 +95,9 @@ Deshalb ist
 \[
  g := \sum_{i=1}^n r_i f_i \cdot X^{\deg f_{n+1} - \deg f_i} \in (f_1, \ldots, f_n)
 \]
-ein Polynom mit gleichem Grad und gleichen Leitkoeffizienten wie $f_{n+1}$. Da $f_{n+1} \not\in (f_0, \ldots, f_n)$ ist auch $f_{n+1}-g \not\in (f_1, \ldots, f_n)$. Da $\deg (f_{n+1}-g) < \deg f_{n+1}$ steht dies im Widerspruch zur Gradminimimalität von $f_{n+1}$.
+ein Polynom vom gleichem Grad und mit gleichen Leitkoeffizienten wie $f_{n+1}$. Da $f_{n+1} \not\in (f_1, \ldots, f_n)$ ist auch $f_{n+1}-g \not\in (f_1, \ldots, f_n)$. Da $\deg (f_{n+1}-g) < \deg f_{n+1}$ steht dies im Widerspruch zur Gradminimimalität von $f_{n+1}$.
 
-Es ist also jedes Ideal in $R[X]$ endlich erzeugt, und somit $R[X]$ somit noethersch.
+Es ist also jedes Ideal in $R[X]$ endlich erzeugt, und $R[X]$ somit noethersch.
 
 
 
@@ -305,31 +305,6 @@ wobei die Wohldefiniertheit klar ist. Für alle $1 \leq i \leq r$ sei
  h_i \in k[x_i] \subseteq k[x_1, \ldots, x_r] \subseteq F
 \]
 das Minimalpolynom von $z_i$ über $k$ (da $x_i$ transzendend über $k$ ist, können wir $k[x_i]$ als Polynomring über $k$ verstehen). Wir setzten $h := \varphi(\prod_{i=1}^r h_i)$. Da $h \neq 0$ ist $h$ in $F$ invertierbar, also auch $\varphi(h)$ in $\Abb(\bar{k}^r \smallsetminus X, \bar{k})$. Dies steht jedoch im Widerspruch dazu, dass $\varphi(h)(z) = 0$.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
