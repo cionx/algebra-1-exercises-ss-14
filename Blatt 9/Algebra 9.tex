@@ -17,6 +17,50 @@
 
 
 
+\addtocounter{section}{1}
+
+
+
+
+
+\section{}
+Sei zunächst $p > 0$ prim und $m \geq 1$. Wir bemerken, dass $\Z/p^m\Z$ genau dann semisimple ist, wenn $m = 1$.
+
+Hierfür bemerken wir zunächst, dass $\Z/p^m\Z$ unzerlegbar ist. Denn ist
+\[
+ \Z/p^m\Z = G_1 \oplus \ldots \oplus G_k,
+\]
+so muss $|G_i| \mid p^m$ für alle $i = 1, \ldots, k$, also $|G_i| = p^{m_i}$ mit $m_i \leq m$ für alle $i = 1, \ldots, k$. Für ein Element $a \in \Z/p^m\Z$ ist dann
+\[
+ \ord a \leq \kgV(|G_1|, \ldots, |G_k|) = p^{\max_{i=1,\ldots,k} m_i}.
+\]
+Da $\ord 1 = m$ für $1 \in \Z/p^m\Z$ muss $\max_{i=1,\ldots,k} m_i = m$, also $|G_i| = p^m = |\Z/p^m\Z|$ für ein $1 \leq i \leq k$, und somit bereits $\Z/p^m\Z = G_i$. 
+
+Da $\Z/p^m\Z$ unzerlegbar ist, ist $\Z/p^m\Z$ genau dann semisimple, wenn es irreduzibel ist, also genau dann, wenn $m = 1$.
+
+
+Für den allgemeinen Fall sei $n \geq 1$. Es sei $n = p_1^{\nu_1} \cdots p_k^{\nu_k}$ eine Primfaktorzerlegung von $n$ mit $p_i \neq p_j$ für $i \neq j$ und $\nu_i \geq 1$ für alle $i = 1, \ldots, k$. Da $\Z$ ein Hauptidealring ist, ist
+\[
+ n\Z = (n) = (\kgV(p_1^{\nu_1}, \ldots, p_k^{\nu_k})) = \bigcap_{i=1}^k (p_i^{\nu_i}).
+\]
+Da $\Z$ ein Hauptidealring ist, ist
+\[
+ (p_i^{\nu_i}) + (p_j^{\nu_j}) = (\ggT(p_i^{\nu_i},p_j^{\nu_j})) = (1) = \Z,
+\]
+für $i \neq j$. Die Ideale $(p_i^{\nu_i})$ sind also paarweise koprim zueinander. Nach dem chinesischen Restklassensatz gibt es also einen Isomorphismus von Ringen
+\[
+ \Z/(n) = \Z/\bigcap_{i=1}^k (p_i^{\nu_i}) \cong \prod_{i=1}^k \Z/(p_i^{\nu_i}),
+\]
+also insbesondere einen Isomorphismus von abelschen Gruppen
+\[
+ \Z/n\Z \cong \bigoplus_{i=1}^k \Z/(p_i^{\nu_i})\Z.
+\]
+$\Z/n\Z$ ist genau dann semisimple, wenn jeder dieser Summanden semisimple ist. Nach der obigen Beobachtung gilt dies genau dann, wenn $\nu_i = 1$ für alle $i = 1, \ldots, k$, wenn also $n$ quadratfrei ist.
+
+
+
+
+
 
 
 
