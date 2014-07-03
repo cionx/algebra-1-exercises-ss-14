@@ -20,7 +20,77 @@
 
 
 
+\section{}
+Es sei $\{v_1, \ldots, v_n\}$ eine $k$-Basis von $V$ und $\{w_1, \ldots, w_m\}$ eine $k$-Basis von $W$. Für eine Darstellung $X$ von $A$ schreiben wir
+\begin{align*}
+ &\rho_X : A \to \End_k(X), a \mapsto (x \mapsto ax)
+\end{align*}
 
+
+
+\subsection{}
+Ist $V \cong W$, so gibt es einen Isomorphismus $\varphi : V \to W$ von Darstellungen von $A$. Inbesondere ist $\varphi$ $k$-linear und somit $\{\varphi(v_1), \ldots, \varphi(v_n)\}$ eine $k$-Basis von $W$. Es sei $a \in A$ beliebig aber fest. Bezeichnet $A$ die darstellende Matrix von $\rho_V(a)$ bezüglich $\{v_1, \ldots, v_n\}$, so ist dies, da $\varphi$ ein $k$-Algebrahomomorphismus ist, auch die darstellende Matrix von $\rho_W(a)$ bezüglich $\{\varphi(v_1), \ldots, \varphi(v_n)\}$. Inbesondere ist deshalb
+\[
+ \chi_V(a) = \tr A = \chi_W(a).
+\]
+
+
+
+\subsection{}
+Es sei $a \in A$ beliebig aber fest. Da $a$ komponentenweise auf $V \oplus W$ wirkt, ist die darstellende Matrix von $\rho_{V \oplus W}$ bezüglich der $k$-Basis
+\[
+ \{(v_1, 0), \ldots, (v_n, 0), (0, w_1), \ldots, (0, w_m)\}
+\]
+von $V \oplus W$ der Form
+\[
+ C =
+ \begin{pmatrix}
+  A & 0 \\
+  0 & B
+ \end{pmatrix},
+\]
+wobei $A$ die darstellende Matrix von $\rho_V(a)$ bezüglich $\{v_1, \ldots, v_n\}$ ist, und $B$ die darstellende Matrix von $\rho_W(a)$ bezüglich der Basis $\{w_1, \ldots, w_m\}$ ist. Inbesondere ist daher
+\[
+ \chi_{V \oplus W}(a) = \tr C = \tr A + \tr B = \chi_V(a) + \chi_W(a).
+\]
+
+
+
+\subsection{}
+Da $\rho_V(e) = \id_V$ ist die darstellende Matrix von $\rho_V(e)$ bezüglich jeder Basis von $V$ die $n \times n$-Einheitsmatrix über $k$, und somit
+\[
+ \chi_V(e) = n \bmod \kchar k = \dim_k(V) \bmod \kchar k.
+\]
+
+
+
+\subsection{}
+Es sei $a \in A$ beliebig aber fest. Bezeichnet $A$ die darstellende Matrix von $\rho_V(a)$ bezüglich $\{v_1, \ldots, v_n\}$ und $B$ die darstellende Matrix von $\rho_W(a)$ bezüglich $\{w_1, \ldots, w_m\}$, so ist, da $\rho_{V \otimes W}(a) = \rho(V)(a) \otimes \rho(W)(a)$, die darstellende Matrix von $\rho_{V \otimes W}(a)$ bezüglich der $k$-Basis
+\[
+ \{v_1 \otimes w_1, v_1, \otimes w_2, \ldots, v_1 \otimes  w_m, v_2 \otimes w_1, \ldots, v_n \otimes w_m\}
+\]
+von $V \otimes W$ von der Form
+\[
+ C =
+ \begin{pmatrix}
+  a_{11} B & a_{12} B & \ldots & a_{1n} B \\
+  a_{21} B & a_{22} B & \ldots & a_{2n} B \\
+    \vdots &   \vdots & \ddots &   \vdots \\
+  a_{n1} B & a_{n2} B & \ldots & a_{nn} B
+ \end{pmatrix}.
+\]
+Daher ist
+\[
+ \chi_{V \otimes W}(a) = \tr C = \sum_{i=1}^n a_{ii} \tr{B} = \tr A \tr B = \chi_V(a) \chi_W(a).
+\]
+
+
+
+\subsection{}
+Es sei $g \in G$ beliebig aber fest. Bezeichnet $A$ die darstellende Matrix von $\rho_V(g)$ bezüglich $\{v_1, \ldots, v_n\}$, so ist die $A^{-1}$ die darstellende Matrix von $\rho_V\left(g^{-1}\right)$ bezüglich $\{v_1, \ldots, v_n\}$ und $A^* = (A^{-1})^T$ die darstellende Matrix von $\rho_{V^*}(g)$ bezüglich $\{v_1^*, \ldots, v_n^*\}$. Deshalb ist
+\[
+ \chi_{V^*}(g) = \tr\left(\left(A^{-1}\right)^T\right) = \tr\left( A^{-1} \right) = \chi_V\left(g^{-1}\right).
+\]
 
 
 
