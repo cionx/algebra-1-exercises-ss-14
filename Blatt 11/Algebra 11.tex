@@ -48,6 +48,41 @@ $\ker \pi$ ist ein Untermodul, also Linksideal, in $R$, und da $M$ einfach ist, 
 
 
 
+\section{}
+Wir gehen davon aus, dass $A$ unitär ist.
+
+
+\subsection*{(a) $\Rightarrow$ (b)}
+Wir definieren
+\[
+ \varepsilon : A \to k, a \mapsto (a,1).
+\]
+Aus der $k$-Bilinearität von $(\cdot,\cdot)$ folgt die $k$-Linearität von $\varepsilon$. Da $(\cdot,\cdot)$ nicht entartet ist, gibt es für jedes $a \in A$ mit $a \neq 0$ ein $b \in A$ mit $(a,b) \neq 0$, also
+\[
+ \varepsilon(ba) = (ba,1) = (b,a) = (a,b) \neq 0.
+\]
+
+
+\subsection*{(b) $\Rightarrow$ (a)}
+Für alle $a,b \in A$ definieren wir
+\[
+ (a,b) := \varepsilon(ab).
+\]
+Aus (b) folgt direkt, dass dies auf $A$ eine nicht entartete symmetrische Bilinearform definiert. Die Assoziativität von $(\cdot, \cdot)$ folgt direkt aus der Assoziativität der Multiplikation auf $A$.
+
+
+\subsection*{(b) $\Leftrightarrow$ (c)}
+Es genügt zu zeigen, dass die jeweiligen Bedingungen (ii) in (b) und in (c) äquivalent sind. Sei hierfür $\varepsilon : A \to k$ $k$-linear.
+
+Da $A$ unitär ist, enthält $\ker \varepsilon$ genau dann ein von $0$ verschiedenes Linksideal, wenn es ein von $0$ verschiedenes Links-Hauptideal enthält. Dies gilt genau dann, wenn es $a \in A$, $a \neq 0$ gibt mit $\varepsilon(ba) = 0$ für alle $b \in A$. Dass $\varepsilon(ba) = 0$ für alle $b \in A$ ist äquivalent dazu, dass es kein $b \in A$ gibt mit $\varepsilon(ba) \neq 0$.
+
+
+
+
+
+
+
+
 
 
 
