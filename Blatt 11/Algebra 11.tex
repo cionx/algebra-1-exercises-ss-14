@@ -19,6 +19,35 @@
 
 
 
+\addtocounter{section}{2}
+
+
+
+
+
+\section{}
+Wir behaupten, dass $R/\mf{m}$ bis auf Isomorphie der einzige einfache $R$-Modul ist.
+
+Wir bemerken zunächst folgendes: Für ein Linksideal $I \subseteq R$ entsprechen die $R$-Untermoduln von $R/I$ in bijektiver Weise den Linksdealen von $R$, die $I$ enthalten via
+\begin{align*}
+ \{J \subseteq R \mid J \text{ ist ein Linksideal mit } I \subseteq J\} &\xleftrightarrow{1:1}\{\text{$R$-Untermoduln von $R/I$}\} \\
+ J &\mapsto J/I,
+\end{align*}
+Daher ist $R/I$ genau dann irreduzibel als $R$-Modul, wenn $I$ ein maximales Linksideal in $R$ ist. Inbesondere ist daher $R/\mf{m}$ ein einfacher $R$-Modul.
+
+Ist andererseits $M$ ein einfacher $R$-Modul, so gibt es $m \in M$ mit $m \neq 0$. Da $R$ unitär ist, ist $Rm \neq 0$ und wegen der Irreduziblität von $M$ somit $Rm = M$. Wir erhalten so einen $R$-Modulepimorphismus
+\[
+ \pi : R \to M, r \mapsto rm.
+\]
+$\ker \pi$ ist ein Untermodul, also Linksideal, in $R$, und da $M$ einfach ist, ist $\ker \pi$ ein maximales Linksideal. Also ist $\ker \pi = \mf{m}$. Somit ist
+\[
+ M \cong R/\ker \pi = R/\mf{m}.
+\]
+
+
+
+
+
 
 
 
